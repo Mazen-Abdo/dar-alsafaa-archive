@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT MODE — CSS custom properties (RGB channels for Tailwind compatibility)
+   ═══════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Transition */
+  --theme-speed: 200ms;
+
+  /* ── Primary ── */
+  --primary-rgb:                 0 53 39;
+  --on-primary-rgb:              255 255 255;
+  --primary-container-rgb:       6 78 59;
+  --on-primary-container-rgb:    128 190 166;
+  --primary-fixed-rgb:           176 240 214;
+  --primary-fixed-dim-rgb:       149 211 186;
+  --on-primary-fixed-rgb:        0 33 23;
+
+  /* ── Secondary ── */
+  --secondary-rgb:               55 85 195;
+  --on-secondary-rgb:            255 255 255;
+  --secondary-container-rgb:     112 140 253;
+  --secondary-fixed-rgb:         221 225 255;
+  --secondary-fixed-dim-rgb:     184 196 255;
+
+  /* ── Tertiary ── */
+  --tertiary-rgb:                74 36 0;
+  --on-tertiary-rgb:             255 255 255;
+  --tertiary-container-rgb:      106 55 0;
+  --on-tertiary-container-rgb:   255 153 57;
+
+  /* ── Error ── */
+  --error-rgb:                   186 26 26;
+  --on-error-rgb:                255 255 255;
+  --error-container-rgb:         255 218 214;
+  --on-error-container-rgb:      147 0 10;
+
+  /* ── Background & Surface ── */
+  --background-rgb:              249 249 255;
+  --on-background-rgb:           21 28 39;
+  --surface-rgb:                 249 249 255;
+  --on-surface-rgb:              21 28 39;
+  --surface-dim-rgb:             211 218 234;
+  --surface-bright-rgb:          249 249 255;
+  --surface-variant-rgb:         220 226 243;
+  --on-surface-variant-rgb:      64 73 68;
+  --surface-tint-rgb:            43 105 84;
+
+  /* ── Surface containers ── */
+  --surface-container-lowest-rgb:  255 255 255;
+  --surface-container-low-rgb:     240 243 255;
+  --surface-container-rgb:         231 238 254;
+  --surface-container-high-rgb:    226 232 248;
+  --surface-container-highest-rgb: 220 226 243;
+
+  /* ── Inverse ── */
+  --inverse-surface-rgb:         42 49 61;
+  --inverse-on-surface-rgb:      235 241 255;
+  --inverse-primary-rgb:         149 211 186;
+
+  /* ── Outline ── */
+  --outline-rgb:                 112 121 116;
+  --outline-variant-rgb:         191 201 195;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE — overrides when .dark is on <html>
+   ═══════════════════════════════════════════════════════════════════════ */
+.dark {
+  /* ── Primary ── */
+  --primary-rgb:                 149 211 186;
+  --on-primary-rgb:              0 33 23;
+  --primary-container-rgb:       11 81 61;
+  --on-primary-container-rgb:    176 240 214;
+  --primary-fixed-rgb:           176 240 214;
+  --primary-fixed-dim-rgb:       149 211 186;
+  --on-primary-fixed-rgb:        0 33 23;
+
+  /* ── Secondary ── */
+  --secondary-rgb:               184 196 255;
+  --on-secondary-rgb:            0 20 83;
+  --secondary-container-rgb:     23 59 171;
+  --secondary-fixed-rgb:         221 225 255;
+  --secondary-fixed-dim-rgb:     184 196 255;
+
+  /* ── Tertiary ── */
+  --tertiary-rgb:                255 183 125;
+  --on-tertiary-rgb:             47 21 0;
+  --tertiary-container-rgb:      106 55 0;
+  --on-tertiary-container-rgb:   255 153 57;
+
+  /* ── Error ── */
+  --error-rgb:                   255 143 143;
+  --on-error-rgb:                105 0 5;
+  --error-container-rgb:         147 0 10;
+  --on-error-container-rgb:      255 218 214;
+
+  /* ── Background & Surface — dark slate ── */
+  --background-rgb:              13 17 23;
+  --on-background-rgb:           226 232 240;
+  --surface-rgb:                 22 27 37;
+  --on-surface-rgb:              226 232 240;
+  --surface-dim-rgb:             13 17 23;
+  --surface-bright-rgb:          30 37 53;
+  --surface-variant-rgb:         30 37 53;
+  --on-surface-variant-rgb:      158 170 179;
+  --surface-tint-rgb:            149 211 186;
+
+  /* ── Surface containers ── */
+  --surface-container-lowest-rgb:  10 14 22;
+  --surface-container-low-rgb:     18 23 32;
+  --surface-container-rgb:         26 32 48;
+  --surface-container-high-rgb:    30 37 53;
+  --surface-container-highest-rgb: 37 44 61;
+
+  /* ── Inverse ── */
+  --inverse-surface-rgb:         226 232 240;
+  --inverse-on-surface-rgb:      42 49 61;
+  --inverse-primary-rgb:         0 53 39;
+
+  /* ── Outline ── */
+  --outline-rgb:                 74 85 104;
+  --outline-variant-rgb:         45 55 72;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Tailwind @layer base — wire CSS vars → used by Tailwind utilities
+   (Tailwind reads these as "rgb(var(--xxx-rgb) / <alpha>)" internally)
+   ═══════════════════════════════════════════════════════════════════════ */
+@layer base {
+  body {
+    background-color: rgb(var(--background-rgb));
+    color:            rgb(var(--on-surface-rgb));
+    font-family:      'IBM Plex Sans Arabic', sans-serif;
+    transition:
+      background-color var(--theme-speed) ease,
+      color            var(--theme-speed) ease;
+  }
+
+  /* Smooth colour transitions on all elements during theme switch */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color;
+    transition-duration: var(--theme-speed);
+    transition-timing-function: ease;
+  }
+
+  /* But DON'T slow down animations/transforms */
+  [class*="animate-"], [class*="transition-"] {
+    transition-property: revert;
+    transition-duration: revert;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Scrollbars
+   ═══════════════════════════════════════════════════════════════════════ */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  {
+  background:    rgb(var(--outline-variant-rgb));
+  border-radius: 99px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Material icon font
+   ═══════════════════════════════════════════════════════════════════════ */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Keyframes
+   ═══════════════════════════════════════════════════════════════════════ */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.loading-ring::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 2px solid #80bea6;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+.float-anim { animation: subtle-float 6s ease-in-out infinite; }
+
+@keyframes progress-fill {
+  0%   { width: 0%; }
+  50%  { width: 70%; }
+  100% { width: 100%; }
+}
+.progress-bar {
+  animation: progress-fill 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fade-in-up 0.22s ease-out both; }
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slide-in-left { animation: slide-in-left 0.25s ease-out both; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE — Primary button contrast fix
+   In dark mode --primary becomes a light mint (#95d3ba), so any element
+   painted with bg-primary must show DARK text, regardless of what Tailwind
+   class is on the element.  This single rule acts as the global safety net.
+   ═══════════════════════════════════════════════════════════════════════ */
+.dark [class*="bg-primary"]:not([class*="bg-primary-fixed"]):not([class*="bg-primary-container"]):not([class*="bg-primary/"]),
+.dark [class*="bg-primary"]:not([class*="bg-primary-fixed"]):not([class*="bg-primary-container"]):not([class*="bg-primary/"]) svg {
+  color: #022c22 !important;
+  stroke: currentColor;
+}
+
+/* Specifically target pagination "active page" buttons and tab indicators */
+.dark .bg-primary {
+  color: #022c22 !important;
+}
+.dark .bg-primary svg,
+.dark .bg-primary * {
+  color: #022c22 !important;
+}

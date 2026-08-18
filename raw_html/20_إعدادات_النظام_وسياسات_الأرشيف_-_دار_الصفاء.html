@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise System Settings &amp; Retention Policy Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#dce2f3",
+                    "primary-container": "#064e3b",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "on-secondary-fixed-variant": "#173bab",
+                    "secondary-fixed": "#dde1ff",
+                    "outline-variant": "#bfc9c3",
+                    "on-primary-fixed": "#002117",
+                    "surface-variant": "#dce2f3",
+                    "on-surface-variant": "#404944",
+                    "surface-container-low": "#f0f3ff",
+                    "on-primary-container": "#80bea6",
+                    "surface-container": "#e7eefe",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary-container": "#ff9939",
+                    "secondary-container": "#708cfd",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#95d3ba",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-surface": "#151c27",
+                    "on-background": "#151c27",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#6a3700",
+                    "inverse-surface": "#2a313d",
+                    "outline": "#707974",
+                    "on-tertiary-fixed": "#2f1500",
+                    "on-secondary-fixed": "#001453",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "secondary": "#3755c3",
+                    "primary-fixed": "#b0f0d6",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d3daea",
+                    "tertiary-fixed": "#ffdcc3",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#b8c4ff",
+                    "on-primary-fixed-variant": "#0b513d",
+                    "primary": "#003527",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f9f9ff",
+                    "tertiary": "#4a2400",
+                    "surface-container-high": "#e2e8f8",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#95d3ba",
+                    "surface-tint": "#2b6954",
+                    "on-secondary-container": "#00217a",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "sm": "8px",
+                    "margin-desktop": "32px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "3xl": "64px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-sm": ["IBM Plex Sans Arabic"],
+                    "headline-lg": ["IBM Plex Sans Arabic"],
+                    "title-lg": ["IBM Plex Sans Arabic"],
+                    "display-lg": ["IBM Plex Sans Arabic"],
+                    "body-md": ["IBM Plex Sans Arabic"],
+                    "title-md": ["IBM Plex Sans Arabic"],
+                    "label-md": ["IBM Plex Sans Arabic"],
+                    "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                    "body-lg": ["IBM Plex Sans Arabic"],
+                    "label-sm": ["IBM Plex Sans Arabic"],
+                    "headline-md": ["IBM Plex Sans Arabic"]
+            },
+            "fontSize": {
+                    "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                    "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                    "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                    "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                    "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .sidebar-item-active { border-right-width: 4px; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); }
+        .tab-active { border-bottom-width: 2px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col bg-primary dark:bg-primary-container fixed right-0 top-0 h-full w-[280px] shadow-lg py-lg z-50">
+<div class="px-gutter mb-xl flex items-center gap-md">
+<img alt="شعار دار الصفاء" class="w-10 h-10 object-contain" data-alt="A modern, high-end corporate logo for a platform named دار الصفاء, featuring abstract geometric shapes in white on a transparent background, conveying trust and technological sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuvsMgJawsBiNl7RuUUrz5gVl-LysVFJ4kSU_3CVCwfmeRTkWpTryy2nSOgXMyaWuqvti8SYN38v5amPvfgkhBbdEbQGe0QsES6S3ky7uBj_9f9LMOvY2pi-IVp__U-bnPviJwaqXmHftThaaMBaQuki7C0ush9b1ZgqeVZ741WFj4Dgn2u3m-V_RNytaH10wuHoEbdlCt9dIjcc3_aUyItV77AmB0jMHy8LIlUDYuhDTIurDql-_rkQ"/>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-primary m-0">دار الصفاء</h1>
+<p class="font-label-md text-label-md text-on-primary/70 m-0 mt-xs">المنصة الذكية</p>
+</div>
+</div>
+<nav class="flex-1 px-sm space-y-xs overflow-y-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-fixed-variant/20 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-weight="regular">dashboard</span>
+<span>لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-fixed-variant/20 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-weight="regular">folder_open</span>
+<span>الملفات</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-fixed-variant/20 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-weight="regular">inventory_2</span>
+<span>الأرشيف</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container sidebar-item-active border-primary-fixed-dim font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">settings</span>
+<span>الإعدادات</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-fixed-variant/20 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-weight="regular">group</span>
+<span>المستخدمين</span>
+</a>
+</nav>
+<div class="px-gutter mt-auto pt-xl border-t border-on-primary/10">
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-title-md text-title-md py-sm px-md rounded-lg hover:bg-primary-fixed-dim transition-colors mb-md flex justify-center items-center gap-sm">
+                ترقية الخطة
+            </button>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-fixed-variant/20 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-weight="regular">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<div class="flex-1 md:mr-[280px] flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-40 h-16 px-margin-desktop flex justify-between items-center w-full">
+<div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant">
+<span>لوحة القيادة</span>
+<span class="material-symbols-outlined text-xs" style="font-size: 16px;">chevron_left</span>
+<span>الإعدادات</span>
+<span class="material-symbols-outlined text-xs" style="font-size: 16px;">chevron_left</span>
+<span class="font-bold text-primary">إعدادات النظام</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-sm"></div>
+<img alt="صورة الملف الشخصي للمستخدم" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a corporate user in a modern office setting, soft natural lighting, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaw3EWekYk4qzm7GQaqEDiBgJrcF7fdLG-pcwAZ_e_4i2GqMGSh1T0jF0sId-as9pG2WnDGGfcPxqqka6ZXOnp81ln7p6nnzVn8Ou7gIFTalvHBrE-ZuMQMn9XXFdnnLDjAL6t9OAV1yFsOXJzK1-nBjK5fZQI3-z_tdn2d4eCsYW7TDgeC4J2PXWktXOHLyKBwLHWrrRwJMPPRzQ29dw6C5_vVIE4EFF3807vU6_JivmS-uCuAEyW8Q"/>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-xl gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">إعدادات النظام وسياسات الأرشيف</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">إدارة التكوينات العامة، وسياسات الاحتفاظ بالبيانات، وإعدادات الأمان الخاصة بالمنصة.</p>
+</div>
+<div class="flex gap-md shrink-0">
+<button class="px-xl py-sm border border-outline text-primary font-title-md text-title-md rounded-lg hover:bg-surface-variant transition-colors">
+                        إلغاء
+                    </button>
+<button class="px-xl py-sm bg-primary text-on-primary font-title-md text-title-md rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                        حفظ التغييرات
+                    </button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="border-b border-outline-variant mb-xl flex overflow-x-auto hide-scrollbar">
+<button class="tab-btn px-lg py-md font-title-md text-title-md text-primary border-primary tab-active whitespace-nowrap transition-colors" data-target="branding" onclick="switchTab('branding')">
+                    ملف الشركة والهوية
+                </button>
+<button class="tab-btn px-lg py-md font-title-md text-title-md text-on-surface-variant hover:text-primary border-transparent border-b-2 whitespace-nowrap transition-colors" data-target="retention" onclick="switchTab('retention')">
+                    سياسات الأرشيف
+                </button>
+<button class="tab-btn px-lg py-md font-title-md text-title-md text-on-surface-variant hover:text-primary border-transparent border-b-2 whitespace-nowrap transition-colors" data-target="data" onclick="switchTab('data')">
+                    معالجة البيانات
+                </button>
+<button class="tab-btn px-lg py-md font-title-md text-title-md text-on-surface-variant hover:text-primary border-transparent border-b-2 whitespace-nowrap transition-colors" data-target="security" onclick="switchTab('security')">
+                    الأمان والتنبيهات
+                </button>
+</div>
+<!-- Tab Contents -->
+<div class="relative">
+<!-- Tab 1: Profile & Branding -->
+<div class="tab-content grid grid-cols-1 lg:grid-cols-3 gap-lg" id="tab-branding">
+<div class="lg:col-span-2 space-y-lg">
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">domain</span>
+                                معلومات الشركة الأساسية
+                            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">اسم الشركة</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow font-body-md text-body-md" type="text" value="دار الصفاء للاستثمارات"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">رقم السجل التجاري</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow font-body-md text-body-md text-left" dir="ltr" type="text" value="1010123456"/>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">الرقم الضريبي (VAT)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow font-body-md text-body-md text-left" dir="ltr" type="text" value="300123456700003"/>
+</div>
+</div>
+</div>
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">palette</span>
+                                ألوان العلامة التجارية
+                            </h3>
+<div class="flex items-center gap-lg">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">اللون الأساسي</label>
+<div class="flex items-center gap-sm">
+<input class="h-10 w-10 rounded cursor-pointer border-0 p-0 bg-transparent" type="color" value="#064E3B"/>
+<span class="font-body-md text-body-md uppercase" dir="ltr">#064E3B</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">اللون الثانوي</label>
+<div class="flex items-center gap-sm">
+<input class="h-10 w-10 rounded cursor-pointer border-0 p-0 bg-transparent" type="color" value="#708cfd"/>
+<span class="font-body-md text-body-md uppercase" dir="ltr">#708CFD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-lg">
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">image</span>
+                                الشعارات (Logos)
+                            </h3>
+<div class="mb-lg">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">الشعار العربي</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-lg text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="h-20 flex items-center justify-center mb-sm">
+<img alt="Arabic Logo Preview" class="max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A sleek corporate logo written in Arabic typography on a clean white background, high resolution, minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXha84LeRgdoIFkZDbqICPukxA2xfwKZReQ5Wzx_72J5dwOFc6JDeWvTNpLqmBSUdy129Au0mMi7yuJ974p2_H-oyCpGxXHup2KUZ_7p3gZbtkgKiFedCulqvNeuz6rC8lGhKDmC00Y4DLaDI5UmSRueBZuleBlJOzVYbrtCjgOfyp26N4pHFs0sPb55DEvZ4qujUIVVd6S-lHu2P6hH1tSjdPFsa5t4DwgaiS5RDlHJIH5mYUpZ3lpw"/>
+</div>
+<span class="font-body-md text-body-md text-primary">تغيير الشعار</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">PNG, SVG (Max 2MB)</p>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">الشعار الإنجليزي</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-lg text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="h-20 flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary transition-colors">cloud_upload</span>
+</div>
+<span class="font-body-md text-body-md text-primary">رفع الشعار</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">PNG, SVG (Max 2MB)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2: Retention Policy -->
+<div class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-lg" id="tab-retention">
+<!-- Left Column -->
+<div class="space-y-lg">
+<!-- Trash Retention -->
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<div class="flex justify-between items-start mb-lg">
+<h3 class="font-title-lg text-title-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">delete_sweep</span>
+                                    سلة المهملات
+                                </h3>
+<div class="group relative cursor-help">
+<span class="material-symbols-outlined text-outline">info</span>
+<div class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 p-sm bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 text-center">
+                                        الفترة التي تبقى فيها الملفات المحذوفة قبل إزالتها نهائياً
+                                    </div>
+</div>
+</div>
+<div class="mb-sm flex justify-between items-end">
+<label class="font-label-md text-label-md text-on-surface-variant">فترة الاحتفاظ</label>
+<span class="font-title-lg text-title-lg text-primary font-bold"><span id="trash-days-val">90</span> يوم</span>
+</div>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="365" min="7" oninput="document.getElementById('trash-days-val').textContent = this.value" type="range" value="90"/>
+<div class="flex justify-between mt-xs font-label-sm text-label-sm text-outline-variant">
+<span>7 أيام</span>
+<span>365 يوم</span>
+</div>
+</div>
+<!-- Auto Archiving -->
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">cloud_download</span>
+                                قواعد الأرشفة التلقائية
+                            </h3>
+<div class="space-y-md">
+<label class="flex items-center justify-between p-md border border-outline-variant/50 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">أرشفة التقارير القديمة</span>
+<span class="font-body-md text-body-md text-on-surface-variant">التقارير التي مر عليها أكثر من سنة</span>
+</div>
+<div class="relative inline-block w-12 h-6 rounded-full bg-primary transition-colors">
+<input checked="" class="peer opacity-0 w-0 h-0" type="checkbox"/>
+<span class="absolute right-[2px] top-[2px] bottom-[2px] w-5 rounded-full bg-white transition-transform transform translate-x-[-24px]"></span>
+</div>
+</label>
+<label class="flex items-center justify-between p-md border border-outline-variant/50 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">أرشفة ملفات الإكسل المستوردة</span>
+<span class="font-body-md text-body-md text-on-surface-variant">بعد معالجتها بنجاح</span>
+</div>
+<div class="relative inline-block w-12 h-6 rounded-full bg-surface-container-highest transition-colors">
+<input class="peer opacity-0 w-0 h-0" type="checkbox"/>
+<span class="absolute right-[2px] top-[2px] bottom-[2px] w-5 rounded-full bg-white transition-transform shadow-sm"></span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Storage -->
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30 h-fit">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">cloud</span>
+                            مساحة التخزين والحصص
+                        </h3>
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">الاستهلاك الحالي</span>
+<span class="font-title-lg text-title-lg text-on-surface font-bold">42.5 GB / 50 GB</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-3 mb-xs overflow-hidden">
+<div class="bg-tertiary-container h-3 rounded-full" style="width: 85%"></div>
+</div>
+<p class="font-label-sm text-label-sm text-tertiary-container flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" style="font-size: 14px;">warning</span>
+                                تم استهلاك 85% من المساحة المتاحة
+                            </p>
+</div>
+<div class="border-t border-outline-variant/50 pt-lg">
+<label class="block font-title-md text-title-md text-on-surface mb-xs">تنبيه عند تجاوز المساحة</label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">إرسال بريد إلكتروني للمسؤولين عند وصول الاستهلاك إلى النسبة المحددة.</p>
+<div class="flex items-center gap-md">
+<div class="relative w-32">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none text-left font-body-md text-body-md pr-8" dir="ltr" max="99" min="50" type="number" value="85"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 3: Data & OCR -->
+<div class="tab-content hidden space-y-lg max-w-4xl" id="tab-data">
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">document_scanner</span>
+                            إعدادات التعرف الضوئي (OCR)
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">لغة المعالجة الافتراضية</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm pr-10 focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-body-md text-on-surface">
+<option value="ar">العربية (Arabic)</option>
+<option value="en">الإنجليزية (English)</option>
+<option value="ar_en">العربية والإنجليزية</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs flex items-center gap-xs">
+                                    نسبة الدقة المطلوبة (Confidence Score)
+                                    <span class="material-symbols-outlined text-sm text-outline cursor-help" title="إذا كانت دقة الاستخراج أقل من هذه النسبة، سيتم تحويل المستند للمراجعة اليدوية">info</span>
+</label>
+<div class="flex items-center gap-md">
+<input class="flex-1 h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="50" oninput="document.getElementById('ocr-score-val').textContent = this.value + '%'" type="range" value="90"/>
+<span class="font-title-lg text-title-lg text-primary font-bold w-12 text-center" dir="ltr" id="ocr-score-val">90%</span>
+</div>
+<p class="font-label-sm text-label-sm text-error mt-xs">تتطلب معالجة يدوية إذا كانت الدقة أقل</p>
+</div>
+</div>
+</div>
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+                            حدود الاستيراد (Import Limits)
+                        </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">الحد الأقصى لحجم ملف Excel/CSV</label>
+<div class="flex items-center gap-xs">
+<input class="w-32 bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary outline-none font-body-md text-body-md text-left" dir="ltr" type="number" value="25"/>
+<span class="font-body-md text-body-md text-on-surface">ميجابايت (MB)</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">الحد الأقصى لعدد الصفوف لكل ملف</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary outline-none font-body-md text-body-md text-left" dir="ltr" type="number" value="10000"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 4: Security -->
+<div class="tab-content hidden grid grid-cols-1 lg:grid-cols-2 gap-lg" id="tab-security">
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30 h-fit">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">security</span>
+                            سياسات الوصول والأمان
+                        </h3>
+<div class="space-y-lg">
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-xs">فرض التحقق بخطوتين (2FA)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">إلزام جميع المستخدمين في النظام بتفعيل المصادقة الثنائية عند تسجيل الدخول.</p>
+</div>
+<div class="relative inline-block w-12 h-6 rounded-full bg-primary transition-colors shrink-0 mt-xs">
+<input checked="" class="peer opacity-0 w-0 h-0" type="checkbox"/>
+<span class="absolute right-[2px] top-[2px] bottom-[2px] w-5 rounded-full bg-white transition-transform transform translate-x-[-24px]"></span>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<div>
+<label class="block font-title-md text-title-md text-on-surface mb-xs">مهلة انتهاء الجلسة (Session Timeout)</label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">يتم تسجيل خروج المستخدم تلقائياً بعد فترة من الخمول.</p>
+<div class="relative w-48">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm pr-10 focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-body-md text-on-surface text-left" dir="ltr">
+<option value="15">15 Minutes</option>
+<option selected="" value="30">30 Minutes</option>
+<option value="60">1 Hour</option>
+<option value="120">2 Hours</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card shadow-sm rounded-xl p-lg border border-outline-variant/30 h-fit">
+<h3 class="font-title-lg text-title-lg mb-lg text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+                            مشغلات التنبيهات (Notification Triggers)
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">تحديد الأحداث التي ترسل إشعارات فورية لمديري النظام.</p>
+<div class="space-y-sm">
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors">
+<input checked="" class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">فشل الاستيراد لمعالجة البيانات</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors">
+<input checked="" class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">رفض التقارير بعد المراجعة</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">تسجيل دخول من جهاز جديد</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors">
+<input class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">محاولات تسجيل دخول فاشلة متعددة</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Simple Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-primary', 'border-primary', 'tab-active');
+                btn.classList.add('text-on-surface-variant', 'border-transparent');
+            });
+            
+            // Show selected content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            // Highlight selected button
+            const activeBtn = document.querySelector(`[data-target="${tabId}"]`);
+            activeBtn.classList.remove('text-on-surface-variant', 'border-transparent');
+            activeBtn.classList.add('text-primary', 'border-primary', 'tab-active');
+        }
+        
+        // Simple Toggle switch visual logic for demo
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            if(checkbox.parentElement.classList.contains('w-12')) {
+                checkbox.addEventListener('change', function() {
+                    const span = this.nextElementSibling;
+                    const container = this.parentElement;
+                    if(this.checked) {
+                        container.classList.remove('bg-surface-container-highest');
+                        container.classList.add('bg-primary');
+                        span.classList.add('translate-x-[-24px]');
+                    } else {
+                        container.classList.remove('bg-primary');
+                        container.classList.add('bg-surface-container-highest');
+                        span.classList.remove('translate-x-[-24px]');
+                    }
+                });
+            }
+        });
+    </script>
+</body></html>

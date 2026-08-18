@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>القطاعات والفروع - إدارة القطاعات والفروع</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ff9939",
+                        "secondary": "#3755c3",
+                        "surface-container": "#e7eefe",
+                        "on-background": "#151c27",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "inverse-surface": "#2a313d",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "surface-container-highest": "#dce2f3",
+                        "primary-container": "#064e3b",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#6a3700",
+                        "surface-variant": "#dce2f3",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-secondary-fixed": "#001453",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-surface-variant": "#404944",
+                        "on-surface": "#151c27",
+                        "outline": "#707974",
+                        "secondary-container": "#708cfd",
+                        "background": "#f9f9ff",
+                        "on-secondary-container": "#00217a",
+                        "surface-container-low": "#f0f3ff",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#80bea6",
+                        "primary-fixed": "#b0f0d6",
+                        "on-primary-fixed": "#002117",
+                        "on-tertiary-fixed": "#2f1500",
+                        "inverse-primary": "#95d3ba",
+                        "surface-tint": "#2b6954",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dde1ff",
+                        "primary": "#003527",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "outline-variant": "#bfc9c3",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "error": "#ba1a1a",
+                        "tertiary": "#4a2400",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9ff",
+                        "surface-container-high": "#e2e8f8",
+                        "inverse-on-surface": "#ebf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; background-color: #f9f9ff; color: #151c27; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Scrollbar for side panel */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #bfc9c3; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #707974; }
+    </style>
+</head>
+<body class="flex bg-background h-screen overflow-hidden text-on-surface">
+<!-- SideNavBar -->
+<nav class="fixed top-0 right-0 h-full w-[280px] bg-primary dark:bg-on-background border-l border-outline-variant dark:border-outline shadow-lg flex flex-col overflow-y-auto z-40 hidden md:flex transition-all duration-200 ease-in-out">
+<div class="p-lg flex items-center gap-md border-b border-primary-container">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined icon-fill">corporate_fare</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-surface-container-lowest">Enterprise Admin</h1>
+<p class="font-label-md text-label-md text-primary-fixed opacity-80">Sector Alpha</p>
+</div>
+</div>
+<div class="p-lg">
+<button class="w-full bg-primary-fixed text-on-primary-fixed py-2 px-4 rounded-lg font-title-md text-title-md hover:bg-white transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span> Quick Action
+            </button>
+</div>
+<div class="flex-1 py-4">
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md bg-secondary-container text-on-secondary-container border-r-4 border-primary-fixed py-md px-lg w-full hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="corporate_fare">corporate_fare</span>
+<span class="font-label-md text-label-md font-bold">Organization</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="business_center">business_center</span>
+<span class="font-label-md text-label-md">Management</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-label-md text-label-md">Data Operations</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="font-label-md text-label-md">Archive</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="mt-auto border-t border-primary-container py-4">
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-on-primary-fixed px-lg py-md w-full opacity-80 hover:bg-primary-container dark:hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden mr-[280px]">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm w-full h-16 sticky top-0 z-30 flex flex-row-reverse justify-between items-center px-lg">
+<div class="flex items-center gap-4">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">
+                    Business Sectors &amp; Branches
+                </div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-full py-2 pr-10 pl-4 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="بحث..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:scale-95 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer active:scale-95 transition-transform">
+<div class="bg-primary text-white w-full h-full flex items-center justify-center font-bold text-sm">MA</div>
+</button>
+</div>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<div class="flex-1 overflow-y-auto bg-surface custom-scrollbar relative">
+<div class="p-margin-desktop max-w-[1400px] mx-auto">
+<!-- 1. Page Header -->
+<div class="mb-gutter flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<nav class="flex items-center text-on-surface-variant mb-2">
+<span class="font-label-md text-label-md hover:text-primary cursor-pointer transition-colors">لوحة القيادة</span>
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_left</span>
+<span class="font-label-md text-label-md hover:text-primary cursor-pointer transition-colors">المنظمة</span>
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_left</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">القطاعات والفروع</span>
+</nav>
+<h2 class="font-display-sm text-display-sm text-on-surface">القطاعات والفروع</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-10 px-4 rounded border border-outline text-on-surface hover:bg-surface-container transition-colors flex items-center gap-2 font-title-md text-title-md">
+<span class="material-symbols-outlined">download</span> تصدير
+                        </button>
+<button class="h-10 px-4 rounded border border-primary text-primary hover:bg-surface-container transition-colors flex items-center gap-2 font-title-md text-title-md">
+<span class="material-symbols-outlined">add_business</span> إضافة قطاع جديد
+                        </button>
+<button class="h-10 px-5 rounded bg-primary-container text-white hover:bg-opacity-90 transition-colors flex items-center gap-2 font-title-md text-title-md shadow-sm">
+<span class="material-symbols-outlined">storefront</span> إضافة فرع جديد
+                        </button>
+</div>
+</div>
+<!-- 2. Summary KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">category</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +2%
+                            </span>
+</div>
+<p class="font-title-md text-title-md text-on-surface-variant mb-1">إجمالي القطاعات</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">4</h3>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">store</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+                            </span>
+</div>
+<p class="font-title-md text-title-md text-on-surface-variant mb-1">إجمالي الفروع</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">42</h3>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill">check_circle</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_flat</span> 0%
+                            </span>
+</div>
+<p class="font-title-md text-title-md text-on-surface-variant mb-1">الفروع النشطة</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">38</h3>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_city</span>
+</div>
+</div>
+<p class="font-title-md text-title-md text-on-surface-variant mb-1">المدن المغطاة</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">8</h3>
+</div>
+</div>
+<!-- 3. Sectors Grid -->
+<div class="mb-6 flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">نظرة عامة على القطاعات</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- Sector 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative group cursor-pointer">
+<div class="absolute top-4 left-4 bg-primary-fixed text-primary px-2 py-1 rounded text-xs font-medium flex items-center gap-1 z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> نشط
+                        </div>
+<div class="h-24 bg-gradient-to-r from-surface-container to-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20">restaurant</span>
+</div>
+<div class="p-5 relative">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-outline-variant/30 flex items-center justify-center text-primary absolute -top-6 right-5">
+<span class="material-symbols-outlined icon-fill">restaurant</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mt-4 mb-3">قطاع المطاعم</h4>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">عدد الفروع</span>
+<span class="font-medium">18 فرع</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">المستخدمين النشطين</span>
+<span class="font-medium">124 مستخدم</span>
+</div>
+</div>
+</div>
+<div class="bg-surface px-5 py-3 border-t border-outline-variant/30 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-sm font-medium text-primary">إدارة القطاع</span>
+<span class="material-symbols-outlined text-primary text-sm">arrow_back</span>
+</div>
+</div>
+<!-- Sector 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative group cursor-pointer">
+<div class="absolute top-4 left-4 bg-primary-fixed text-primary px-2 py-1 rounded text-xs font-medium flex items-center gap-1 z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> نشط
+                        </div>
+<div class="h-24 bg-gradient-to-r from-surface-container to-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20">hotel</span>
+</div>
+<div class="p-5 relative">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-outline-variant/30 flex items-center justify-center text-primary absolute -top-6 right-5">
+<span class="material-symbols-outlined icon-fill">hotel</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mt-4 mb-3">قطاع الفنادق</h4>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">عدد الفروع</span>
+<span class="font-medium">6 فروع</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">المستخدمين النشطين</span>
+<span class="font-medium">86 مستخدم</span>
+</div>
+</div>
+</div>
+<div class="bg-surface px-5 py-3 border-t border-outline-variant/30 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-sm font-medium text-primary">إدارة القطاع</span>
+<span class="material-symbols-outlined text-primary text-sm">arrow_back</span>
+</div>
+</div>
+<!-- Sector 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative group cursor-pointer">
+<div class="absolute top-4 left-4 bg-primary-fixed text-primary px-2 py-1 rounded text-xs font-medium flex items-center gap-1 z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> نشط
+                        </div>
+<div class="h-24 bg-gradient-to-r from-surface-container to-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20">deck</span>
+</div>
+<div class="p-5 relative">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-outline-variant/30 flex items-center justify-center text-primary absolute -top-6 right-5">
+<span class="material-symbols-outlined icon-fill">deck</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mt-4 mb-3">قطاع الاستراحات</h4>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">عدد الفروع</span>
+<span class="font-medium">12 فرع</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">المستخدمين النشطين</span>
+<span class="font-medium">42 مستخدم</span>
+</div>
+</div>
+</div>
+<div class="bg-surface px-5 py-3 border-t border-outline-variant/30 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-sm font-medium text-primary">إدارة القطاع</span>
+<span class="material-symbols-outlined text-primary text-sm">arrow_back</span>
+</div>
+</div>
+<!-- Sector 4 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm hover:shadow-md transition-shadow relative group cursor-pointer">
+<div class="absolute top-4 left-4 bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-xs font-medium flex items-center gap-1 z-10">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> قيد التجهيز
+                        </div>
+<div class="h-24 bg-gradient-to-r from-surface-container to-surface-container-low flex items-center justify-center grayscale opacity-70">
+<span class="material-symbols-outlined text-4xl text-primary opacity-20">icecream</span>
+</div>
+<div class="p-5 relative">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-outline-variant/30 flex items-center justify-center text-outline absolute -top-6 right-5">
+<span class="material-symbols-outlined icon-fill">icecream</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mt-4 mb-3 text-on-surface-variant">قطاع الآيس كريم</h4>
+<div class="space-y-2 opacity-70">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">عدد الفروع</span>
+<span class="font-medium">6 فروع</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-label-md text-label-md">المستخدمين النشطين</span>
+<span class="font-medium">0 مستخدم</span>
+</div>
+</div>
+</div>
+<div class="bg-surface px-5 py-3 border-t border-outline-variant/30 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-sm font-medium text-primary">إدارة القطاع</span>
+<span class="material-symbols-outlined text-primary text-sm">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- 4. Branches Directory Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden mb-xl">
+<div class="p-5 border-b border-outline-variant/30 flex justify-between items-center bg-white">
+<h3 class="font-headline-md text-headline-md text-on-surface">دليل الفروع</h3>
+<div class="flex items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">filter_list</span>
+<select class="bg-surface border border-outline-variant rounded-md py-2 pr-9 pl-8 text-sm focus:outline-none focus:border-primary appearance-none cursor-pointer">
+<option>جميع القطاعات</option>
+<option>قطاع المطاعم</option>
+<option>قطاع الفنادق</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">arrow_drop_down</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="bg-surface border border-outline-variant rounded-md py-2 pr-9 pl-4 text-sm focus:outline-none focus:border-primary w-64" placeholder="بحث عن فرع..." type="text"/>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/50">
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap">اسم الفرع</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap">القطاع التابع</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap">المدينة</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap">مدير الفرع</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap">رقم التواصل</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap text-center">المستخدمين</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap text-center">حجم الأرشيف</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap text-center">الحالة</th>
+<th class="py-3 px-4 font-title-md text-title-md text-on-surface-variant font-medium text-sm whitespace-nowrap text-center">إجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest/50 transition-colors bg-white h-[48px]">
+<td class="py-2 px-4 whitespace-nowrap font-medium text-on-surface">فرع الرياض - العليا</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">restaurant</span> مطاعم
+                                    </td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant">الرياض</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">أ.م</div>
+                                        أحمد محمد
+                                    </td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant" dir="ltr">+966 50 123 4567</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">24</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">1.2 GB</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="inline-flex items-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-primary-container checked:right-0 checked:border-primary-container z-10 transition-transform duration-200" id="toggle1" name="toggle" style="right: 20px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-primary-container cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors group relative" title="تعديل">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="تعيين مستخدمين">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="عرض التقارير">
+<span class="material-symbols-outlined text-[18px]">assessment</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" title="أرشفة">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest/50 transition-colors bg-surface-bright h-[48px]">
+<td class="py-2 px-4 whitespace-nowrap font-medium text-on-surface">فرع جدة - الكورنيش</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">hotel</span> فنادق
+                                    </td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant">جدة</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">س.ع</div>
+                                        سالم عبدالله
+                                    </td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant" dir="ltr">+966 55 987 6543</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">45</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">3.4 GB</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="inline-flex items-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-primary-container checked:right-0 checked:border-primary-container z-10 transition-transform duration-200" id="toggle2" name="toggle" style="right: 20px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-primary-container cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="تعديل">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="تعيين مستخدمين">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="عرض التقارير">
+<span class="material-symbols-outlined text-[18px]">assessment</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" title="أرشفة">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest/50 transition-colors bg-white h-[48px]">
+<td class="py-2 px-4 whitespace-nowrap font-medium text-on-surface">فرع الدمام - الفيصلية</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">deck</span> استراحات
+                                    </td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant">الدمام</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant flex items-center gap-2 mt-1">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px] font-bold">--</div>
+<span class="text-error text-xs">غير معين</span>
+</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant" dir="ltr">+966 53 456 7890</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">8</td>
+<td class="py-2 px-4 whitespace-nowrap text-sm text-on-surface-variant text-center">0.5 GB</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="inline-flex items-center">
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant checked:right-0 checked:border-primary-container z-10 transition-transform duration-200" id="toggle3" name="toggle" style="right: 0px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-outline-variant cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+</td>
+<td class="py-2 px-4 whitespace-nowrap text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="تعديل">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="تعيين مستخدمين">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors" title="عرض التقارير">
+<span class="material-symbols-outlined text-[18px]">assessment</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-error-container flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" title="أرشفة">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant/30 bg-white flex justify-between items-center text-sm text-on-surface-variant">
+<div>عرض 1 إلى 3 من أصل 42 فرع</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary-container text-white flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container">3</button>
+<span class="px-1">...</span>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container">14</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-md px-lg border-t border-outline-variant flex flex-row-reverse justify-between items-center mt-auto">
+<div class="font-label-md text-label-md font-bold text-primary">Business Sectors &amp; Branches</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant">© 2024 Business Sectors &amp; Branches Enterprise Workspace. All rights reserved.</div>
+<div class="flex gap-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity duration-150" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity duration-150" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity duration-150" href="#">Security Compliance</a>
+</div>
+</footer>
+</div>
+</main>
+<!-- Overlay for Drawer (Hidden by default, shown for demo) -->
+<div class="fixed inset-0 bg-on-surface/40 z-50 transition-opacity backdrop-blur-sm flex justify-start">
+<!-- Side Drawer: Add/Edit Branch -->
+<div class="w-[480px] h-full bg-surface-container-lowest shadow-2xl flex flex-col transform transition-transform translate-x-0 border-l border-outline-variant/30">
+<!-- Drawer Header -->
+<div class="px-6 py-5 border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-low/50">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_business</span>
+                    إضافة فرع جديد
+                </h2>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-6 custom-scrollbar space-y-6">
+<!-- Section 1 -->
+<div>
+<h3 class="font-title-md text-title-md text-primary border-b border-outline-variant/30 pb-2 mb-4">المعلومات الأساسية</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">اسم الفرع *</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 px-3 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="مثال: فرع الرياض - العليا" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">القطاع التابع *</label>
+<div class="relative">
+<select class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 px-3 text-sm focus:outline-none focus:border-primary appearance-none pr-8">
+<option disabled="" selected="" value="">اختر القطاع</option>
+<option>قطاع المطاعم</option>
+<option>قطاع الفنادق</option>
+<option>قطاع الاستراحات</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">المدينة *</label>
+<div class="relative">
+<select class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 px-3 text-sm focus:outline-none focus:border-primary appearance-none pr-8">
+<option disabled="" selected="" value="">اختر المدينة</option>
+<option>الرياض</option>
+<option>جدة</option>
+<option>الدمام</option>
+<option>مكة المكرمة</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2 -->
+<div>
+<h3 class="font-title-md text-title-md text-primary border-b border-outline-variant/30 pb-2 mb-4">الإدارة والاتصال</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">مدير الفرع</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">person_search</span>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 pr-9 pl-3 text-sm focus:outline-none focus:border-primary transition-all" placeholder="البحث عن موظف..." type="text"/>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">يمكنك تعيين مدير الفرع لاحقاً</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">رقم التواصل الأساسي</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 px-3 text-sm focus:outline-none focus:border-primary text-right transition-all" dir="ltr" placeholder="+966 5X XXX XXXX" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Section 3 -->
+<div>
+<h3 class="font-title-md text-title-md text-primary border-b border-outline-variant/30 pb-2 mb-4">إعدادات الهوية الداخلية</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">الرمز التعريفي للفرع (Branch Code)</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-md py-2 px-3 text-sm focus:outline-none focus:border-primary text-right font-mono uppercase transition-all" dir="ltr" placeholder="مثال: RUH-REST-01" type="text"/>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded border border-outline-variant/50">
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-primary-container checked:right-0 checked:border-primary-container z-10 transition-transform duration-200" id="toggle_active" name="toggle" style="right: 20px;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-primary-container cursor-pointer" for="toggle_active"></label>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface text-sm">تفعيل الفرع فوراً</div>
+<div class="text-xs text-on-surface-variant">سيتمكن المستخدمون المعينون من الدخول للنظام</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer / Actions -->
+<div class="px-6 py-4 border-t border-outline-variant/30 bg-surface-container-low/50 flex gap-3">
+<button class="flex-1 bg-primary-container text-white py-2 rounded font-title-md text-title-md hover:bg-opacity-90 transition-colors shadow-sm">
+                    حفظ وإنشاء الفرع
+                </button>
+<button class="px-6 border border-outline text-on-surface py-2 rounded font-title-md text-title-md hover:bg-surface-container transition-colors">
+                    إلغاء
+                </button>
+</div>
+</div>
+</div>
+</body></html>

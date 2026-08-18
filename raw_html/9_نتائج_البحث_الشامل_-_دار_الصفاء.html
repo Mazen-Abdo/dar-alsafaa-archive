@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>صفحة نتائج البحث الشامل - دار الصفاء</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#dce2f3",
+                        "secondary-container": "#708cfd",
+                        "outline-variant": "#bfc9c3",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "secondary-fixed": "#dde1ff",
+                        "primary-fixed": "#b0f0d6",
+                        "on-secondary-container": "#00217a",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "outline": "#707974",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "surface-tint": "#2b6954",
+                        "inverse-primary": "#95d3ba",
+                        "primary": "#003527",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-container": "#064e3b",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#6a3700",
+                        "secondary": "#3755c3",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001453",
+                        "on-surface-variant": "#404944",
+                        "on-background": "#151c27",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface": "#151c27",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "surface-variant": "#dce2f3",
+                        "background": "#f9f9ff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#80bea6",
+                        "tertiary-fixed": "#ffdcc3",
+                        "tertiary": "#4a2400",
+                        "surface-container": "#e7eefe",
+                        "on-tertiary-container": "#ff9939",
+                        "inverse-surface": "#2a313d",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-primary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="h-16 w-full fixed top-0 z-40 pr-[280px] bg-surface dark:bg-surface-dim border-b border-outline-variant shadow-sm flex justify-between items-center px-margin-desktop transition-all duration-300 md:pr-[280px] pr-0">
+<div class="flex items-center flex-1">
+<span class="font-title-lg text-title-lg text-primary dark:text-primary-fixed-dim">نظام دار الصفاء الذكي</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative w-96 hidden lg:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-4 pr-10 py-2 focus:ring-2 focus:ring-primary text-body-md font-body-md text-on-surface" placeholder="ابحث..." type="text" value="تقرير الربع الثالث"/>
+</div>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">notifications</span>
+</button>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">help_outline</span>
+</button>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">dark_mode</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 border border-outline-variant">
+<img alt="صورة المستخدم الشخصية" class="w-full h-full object-cover" data-alt="A professional portrait photo of a corporate executive in a modern office setting. The lighting is bright and clean, typical of a high-end corporate environment. The person is looking directly at the camera with a slight, confident smile. The background is slightly blurred showing subtle office elements. Ensure a premium, modern aesthetic suitable for an enterprise dashboard avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOkOzZWPnH-sHFfiX8rBpCfqKu3IeMrFXjdLmV_pubkSTzq-y8bbobCs1bA5vZFaTm9pp07gOG3FIa-FFiiuezS568tdyDORl9kA2zXyyXwbkaVb5_Q3Ebjl2UEq3I0SpMG4HuuVQR_p1-xlZv-YwoqOjcZe98sjC__A3lAfeC0mMy2jt5HrIbIwCZpO8J3WBtUSSpjpcJBVsrT331yyI9t0JHQiUrN9-w2spox2ZVQpNjm6hKU-2kzw"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-[280px] h-full fixed right-0 top-0 bg-primary-container dark:bg-primary-container border-l border-outline-variant shadow-sm flex flex-col overflow-y-auto hidden md:flex z-50">
+<div class="p-lg flex flex-col items-center border-b border-on-primary-container/20">
+<div class="w-16 h-16 bg-surface rounded-lg flex items-center justify-center mb-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">د</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary-container">دار الصفاء</h1>
+<p class="text-on-primary-container opacity-80 font-body-md text-body-md">نظام الإدارة الذكي</p>
+</div>
+<div class="flex-1 py-md flex flex-col gap-sm">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md text-title-md">لوحة القيادة</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-title-md text-title-md">إدارة الأصول</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary border-r-4 border-primary-fixed hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-title-md text-title-md">التقارير</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md">المستخدمين</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">الإعدادات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-title-md text-title-md">الدعم الفني</span>
+</a>
+</div>
+<div class="p-lg">
+<button class="w-full bg-primary-fixed text-on-primary-container py-3 rounded-lg font-title-md text-title-md hover:bg-primary-fixed-dim transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                 إضافة أصل جديد
+             </button>
+</div>
+<div class="mt-auto border-t border-on-primary-container/20 py-sm">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-title-md text-title-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:pr-[280px] pt-16 flex flex-col">
+<!-- Search Header & Tabs -->
+<div class="bg-surface-container-lowest border-b border-outline-variant px-margin-desktop py-lg">
+<div class="flex flex-col gap-md">
+<div class="flex items-baseline gap-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">نتائج البحث عن "تقرير الربع الثالث"</h1>
+<span class="font-title-md text-title-md text-on-surface-variant">(54 نتيجة)</span>
+</div>
+<div class="flex gap-lg border-b border-outline-variant mt-md overflow-x-auto no-scrollbar">
+<button class="pb-3 border-b-2 border-primary text-primary font-title-md text-title-md whitespace-nowrap px-2">الكل</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-title-md text-title-md whitespace-nowrap px-2">المستندات</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-title-md text-title-md whitespace-nowrap px-2">التقارير</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-title-md text-title-md whitespace-nowrap px-2">المستخدمين</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-title-md text-title-md whitespace-nowrap px-2">الفروع</button>
+</div>
+</div>
+</div>
+<div class="flex-1 px-margin-desktop py-lg flex flex-col lg:flex-row gap-gutter">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-64 flex-shrink-0 flex flex-col gap-lg">
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-md">تصفية النتائج</h3>
+<div class="flex flex-col gap-md">
+<div>
+<label class="font-title-md text-title-md text-on-surface-variant block mb-2">تاريخ النشر</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary">
+<option>آخر 30 يوم</option>
+<option>هذا العام</option>
+<option>الكل</option>
+</select>
+</div>
+<div>
+<label class="font-title-md text-title-md text-on-surface-variant block mb-2">القطاع</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-3 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary">
+<option>المالية</option>
+<option>الموارد البشرية</option>
+<option>تقنية المعلومات</option>
+</select>
+</div>
+<div>
+<label class="font-title-md text-title-md text-on-surface-variant block mb-2">نوع الملف</label>
+<div class="flex flex-col gap-2 mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="form-checkbox text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">PDF</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="form-checkbox text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Excel</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="form-checkbox text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Word</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Results List -->
+<div class="flex-1 flex flex-col gap-lg">
+<!-- Category: Reports -->
+<section>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        التقارير (2)
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-md text-title-md text-primary">تقرير الأداء للربع الثالث 2024</h3>
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-label-md font-label-md">معتمد</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">ملخص شامل لأداء الفروع الرئيسية خلال الربع الثالث مع تحليل المؤشرات المالية.</p>
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                    15 أكتوبر 2024
+                                </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                                    أحمد محمود
+                                </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-title-md text-title-md text-primary">مسودة تقرير الميزانية - الربع الثالث</h3>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded text-label-md font-label-md">قيد المراجعة</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">التفاصيل الأولية لميزانية الربع الثالث بانتظار اعتماد الإدارة المالية.</p>
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                    12 أكتوبر 2024
+                                </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                                    سارة خالد
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Documents -->
+<section>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-md mt-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                        المستندات (3)
+                    </h2>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-lowest rounded-lg p-3 border border-outline-variant flex items-center gap-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 bg-red-100 rounded flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-on-surface">مرفقات_تقرير_الربع_الثالث_النهائي.pdf</h3>
+<div class="flex items-center gap-4 mt-1 font-body-md text-body-md text-on-surface-variant">
+<span>2.4 MB</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>تم الأرشفة: 16 أكتوبر 2024</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-3 border border-outline-variant flex items-center gap-md hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 bg-green-100 rounded flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">table_chart</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-on-surface">بيانات_خام_الربع_الثالث.xlsx</h3>
+<div class="flex items-center gap-4 mt-1 font-body-md text-body-md text-on-surface-variant">
+<span>5.1 MB</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>تم الأرشفة: 14 أكتوبر 2024</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Users -->
+<section>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-md mt-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">group</span>
+                        المستخدمين المرتبطين (2)
+                    </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img alt="صورة المستخدم" class="w-full h-full object-cover" data-alt="Portrait of an Arabic male corporate financial analyst in a modern office. Bright, professional lighting, modern enterprise style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB87bnAPT2Nx-mPW7fHEtaLPCDGTGtOjT8UxJOXHHajLzFKLl8BS-Gmzh6IIUJi5Ehfth_7oKEkDv6yBD2HVWK8pu9GxtV1IZO6BOF26L30CmEAJ4HgkeadSUy95lGyn6wlKC42KHLMuiwyH5YpnRK9UBi7ozvAGrIGh_vd_zUwvt5s1A0gHoDETrVLwNVkD6389j6W14uoFSKZqOmjhwSOyg9XRIt4sZtyjWbr_MG99uuIw2f4_bWNaQ"/>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">أحمد محمود</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">محلل مالي - الإدارة المالية</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img alt="صورة المستخدم" class="w-full h-full object-cover" data-alt="Portrait of an Arabic female corporate manager in a modern office setting. Clean, high-end professional lighting, modern enterprise style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnXpKqtcxNIJ5HqT4_BD-BRFxVpxbQszqVb0GWd9bSrsgjFcPogQvEFflt5Phu2atfIxLN3rtCsIwG-c9IBN6ZedF0ixWRJWrDgpH1Qla3GSiOtttLiOzHW39Hn5rqrq4enIrWBOGE-ClzMCvdCfRG4iThJ_sSIp6s7mx9Bz_-_NAzx59iR16HccRnmw6QaRaY3yXfc65RSkW0M2brjAHSjXzf6g9pv1lVSZLHxSl_lB3-a7q8uN3WUw"/>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">سارة خالد</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">مدير قسم - التخطيط الاستراتيجي</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md md:pr-[280px] bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-margin-desktop mt-auto gap-4">
+<div class="font-label-md text-label-md text-on-surface-variant">
+                © 2024 نظام دار الصفاء الذكي. جميع الحقوق محفوظة.
+            </div>
+<div class="flex items-center gap-md font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">الشروط والأحكام</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">سياسة الخصوصية</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">اتصل بنا</a>
+</div>
+<div class="font-title-md text-title-md text-secondary">
+                دار الصفاء
+            </div>
+</footer>
+</main>
+</body></html>

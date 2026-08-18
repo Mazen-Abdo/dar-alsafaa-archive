@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مركز التنبيهات - دار الصفاء</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#dce2f3",
+                        "secondary-container": "#708cfd",
+                        "outline-variant": "#bfc9c3",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "secondary-fixed": "#dde1ff",
+                        "primary-fixed": "#b0f0d6",
+                        "on-secondary-container": "#00217a",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "outline": "#707974",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "surface-tint": "#2b6954",
+                        "inverse-primary": "#95d3ba",
+                        "primary": "#003527",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-container": "#064e3b",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#6a3700",
+                        "secondary": "#3755c3",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#001453",
+                        "on-surface-variant": "#404944",
+                        "on-background": "#151c27",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface": "#151c27",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "surface-variant": "#dce2f3",
+                        "background": "#f9f9ff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#80bea6",
+                        "tertiary-fixed": "#ffdcc3",
+                        "tertiary": "#4a2400",
+                        "surface-container": "#e7eefe",
+                        "on-tertiary-container": "#ff9939",
+                        "inverse-surface": "#2a313d",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-primary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "3xl": "64px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="h-16 w-full fixed top-0 z-40 pr-[280px] bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-margin-desktop">
+<div class="flex items-center gap-4">
+<h1 class="font-title-lg text-title-lg text-primary font-bold">نظام دار الصفاء الذكي</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-4 pr-10 py-2 rounded-full bg-surface-container-high border-none focus:ring-2 focus:ring-primary w-64 text-body-md" placeholder="بحث..." type="text"/>
+</div>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full relative">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</button>
+<button class="hover:bg-surface-container-high transition-all p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+</button>
+<img alt="صورة المستخدم الشخصية" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A professional headshot of a corporate executive in a modern office setting. The lighting is bright and clean, emphasizing a premium corporate aesthetic. The background is a slightly blurred modern workspace with subtle green accents to match the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOVgqh5C5bAY6RxHnIaxp_oT3MmyiRdfYNy8tsrd5hh2d5UzSz3voFtlMYNakRAhpq-ySeJoPV6D8ENEQS23kxQF8M2b6shlyNzEbyDXFUVVvgF7Y_VFKUT7XpzXTfU_iZ2ueDjR_t_uquOiHXDf79CkoXNRuRweukhfFVJbRg-6r8KZ7XyypBqF1bsGkQ5L1A4DEYxsIR_koLbLgohgNXK5o2lDucw9Ulzw7DSnoFZMGgqKKaZPWolA"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-[280px] h-full fixed right-0 top-0 bg-primary-container border-l border-outline-variant shadow-sm flex flex-col overflow-y-auto z-50">
+<div class="p-6 flex flex-col items-center border-b border-on-primary-container/20">
+<img alt="شعار دار الصفاء" class="w-16 h-16 mb-4 rounded-lg object-contain" data-alt="A sleek, minimalist corporate logo for 'Dar Al Safaa' featuring abstract geometric shapes resembling modern architecture. The logo is rendered in crisp white and light green against a deep green background, conveying trust and stability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNnQtroMtHx-DX00TRC12Rd7K_DCBAI9S6AtJVowLDcpGOPukm4xhN1ryCQOGzPJEfd1ZOh54LZem6f2HSckvbhAqoHdtUmYENhU_gREILBkXUFiU_G9bsigR-GLN7ofK9ykDUTNpDRI81xPU-QZNsH9tHLVHt_SFIR4-xpqeJftWNPZrrsOTmebD7DSbptV543YBdugYegREZ3rJWcS5SyuvFu-O6zEDEof9u6m0zdZAjG2qmDGTuZQ"/>
+<h2 class="font-headline-md text-headline-md font-bold text-on-primary-container">دار الصفاء</h2>
+<p class="font-label-md text-label-md text-primary-fixed-dim mt-1">نظام الإدارة الذكي</p>
+</div>
+<div class="p-4">
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-title-md text-title-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-fixed-dim transition-colors shadow-sm">
+<span class="material-symbols-outlined">add</span>
+                إضافة أصل جديد
+            </button>
+</div>
+<ul class="flex-1 py-4 flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md text-title-md">لوحة القيادة</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-title-md text-title-md">إدارة الأصول</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-title-md text-title-md">التقارير</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md">المستخدمين</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">الإعدادات</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-title-md text-title-md">الدعم الفني</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto border-t border-on-primary-container/20 p-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container opacity-80 hover:bg-primary/20 transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-title-md text-title-md">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 pr-[280px] pt-16 flex flex-col min-h-screen">
+<div class="flex-1 p-margin-desktop max-w-7xl mx-auto w-full">
+<!-- Breadcrumbs & Header -->
+<div class="mb-lg">
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-label-md text-label-md mb-2">
+<ol class="inline-flex items-center gap-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">لوحة القيادة</a>
+</li>
+<li>
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</li>
+<li aria-current="page" class="text-primary font-medium">مركز التنبيهات</li>
+</ol>
+</nav>
+<div class="flex justify-between items-end">
+<h1 class="font-display-sm text-display-sm text-on-background">مركز التنبيهات</h1>
+<div class="flex gap-4">
+<button class="text-primary hover:text-primary-container font-title-md text-title-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">done_all</span>
+                            تحديد الكل كمقروء
+                        </button>
+</div>
+</div>
+</div>
+<!-- Content Layout: Sidebar + List -->
+<div class="flex gap-gutter">
+<!-- Inner Sidebar: Categories -->
+<aside class="w-64 shrink-0">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-4">التصنيفات</h3>
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-high text-primary font-title-md text-title-md font-medium" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">inbox</span>
+                                        الكل
+                                    </div>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full">12</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-body-lg text-body-lg" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">description</span>
+                                        التقارير
+                                    </div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full">3</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-body-lg text-body-lg" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">security</span>
+                                        الأمان
+                                    </div>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full">1</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-body-lg text-body-lg" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">upload_file</span>
+                                        استيراد البيانات
+                                    </div>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-body-lg text-body-lg" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">document_scanner</span>
+                                        معالجة OCR
+                                    </div>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Notification List -->
+<div class="flex-1 flex flex-col gap-4">
+<!-- Filters -->
+<div class="flex gap-2 mb-2">
+<button class="px-4 py-1.5 rounded-full border border-primary text-primary bg-primary/5 font-title-md text-title-md transition-colors hover:bg-primary/10">الكل</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant font-title-md text-title-md transition-colors hover:bg-surface-container">غير مقروء</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-on-surface-variant font-title-md text-title-md transition-colors hover:bg-surface-container">مقروء</button>
+</div>
+<!-- Alert Cards -->
+<div class="flex flex-col gap-3">
+<!-- Unread Notification (Security) -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-error/20 flex gap-4 relative overflow-hidden group shadow-sm hover:shadow transition-shadow">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined icon-filled">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+                                        محاولة تسجيل دخول غير مصرح بها
+                                        <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</h4>
+<span class="text-on-surface-variant font-label-md text-label-md whitespace-nowrap">منذ 10 دقائق</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">تم رصد محاولة تسجيل دخول فاشلة متعددة من عنوان IP غير معروف. يرجى مراجعة سجلات الأمان.</p>
+<div class="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary font-title-md text-title-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                        عرض التفاصيل
+                                    </button>
+<button class="text-on-surface-variant hover:text-on-surface font-title-md text-title-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                                        أرشفة
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Unread Notification (Report) -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-primary/20 flex gap-4 relative overflow-hidden group shadow-sm hover:shadow transition-shadow">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined icon-filled">analytics</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+                                        اكتمل إنشاء التقرير الشهري
+                                        <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</h4>
+<span class="text-on-surface-variant font-label-md text-label-md whitespace-nowrap">منذ ساعتين</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">تقرير جرد الأصول لشهر أكتوبر جاهز الآن للتحميل والمراجعة.</p>
+<div class="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary font-title-md text-title-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                        تحميل التقرير
+                                    </button>
+<button class="text-on-surface-variant hover:text-on-surface font-title-md text-title-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                                        أرشفة
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Read Notification (OCR) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant flex gap-4 group hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0 opacity-70">
+<span class="material-symbols-outlined">document_scanner</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-lg text-title-lg text-on-surface opacity-80">
+                                        نجاح معالجة مستندات الدفعة 402
+                                    </h4>
+<span class="text-on-surface-variant font-label-md text-label-md whitespace-nowrap opacity-70">أمس، 14:30</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 opacity-80">تمت معالجة 50 مستنداً بنجاح عبر نظام OCR وتم تحديث قاعدة البيانات.</p>
+<div class="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary font-title-md text-title-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                        عرض التفاصيل
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Read Notification (Data Import) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant flex gap-4 group hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0 opacity-70">
+<span class="material-symbols-outlined">cloud_done</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-lg text-title-lg text-on-surface opacity-80">
+                                        تم مزامنة البيانات بنجاح
+                                    </h4>
+<span class="text-on-surface-variant font-label-md text-label-md whitespace-nowrap opacity-70">أمس، 09:15</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 opacity-80">تم استيراد بيانات الأصول الجديدة من الفرع الرئيسي بنجاح وبدون أخطاء.</p>
+<div class="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-primary font-title-md text-title-md hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                        عرض التفاصيل
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination (Optional visual indicator) -->
+<div class="flex justify-center mt-4 mb-lg">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50"><span class="material-symbols-outlined">chevron_right</span></button>
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-title-md text-title-md">1</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center font-title-md text-title-md transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center font-title-md text-title-md transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md pr-[280px] bg-surface-container-low border-t border-outline-variant flex justify-between items-center px-margin-desktop mt-auto z-40 relative">
+<p class="font-label-md text-label-md text-primary">© 2024 نظام دار الصفاء الذكي. جميع الحقوق محفوظة.</p>
+<div class="flex gap-4">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">الشروط والأحكام</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">اتصل بنا</a>
+</div>
+</footer>
+</main>
+</body></html>

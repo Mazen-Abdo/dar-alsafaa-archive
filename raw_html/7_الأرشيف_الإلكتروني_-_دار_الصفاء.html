@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Electronic Archive Center - Dar Al Safaa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#151c27",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "tertiary": "#4a2400",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#ff9939",
+                        "surface-container-high": "#e2e8f8",
+                        "outline-variant": "#bfc9c3",
+                        "on-tertiary-fixed": "#2f1500",
+                        "secondary-fixed": "#dde1ff",
+                        "on-secondary-container": "#00217a",
+                        "inverse-primary": "#95d3ba",
+                        "inverse-on-surface": "#ebf1ff",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "surface-container-low": "#f0f3ff",
+                        "secondary": "#3755c3",
+                        "surface-variant": "#dce2f3",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e7eefe",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#b0f0d6",
+                        "surface-tint": "#2b6954",
+                        "on-primary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "on-surface": "#151c27",
+                        "outline": "#707974",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9ff",
+                        "tertiary-container": "#6a3700",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "inverse-surface": "#2a313d",
+                        "primary-container": "#064e3b",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d3daea",
+                        "surface-bright": "#f9f9ff",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#404944",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001453",
+                        "surface-container-highest": "#dce2f3",
+                        "on-primary-container": "#80bea6",
+                        "primary": "#003527",
+                        "tertiary-fixed": "#ffdcc3",
+                        "secondary-container": "#708cfd"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        xs: "4px",
+                        "2xl": "48px",
+                        "gutter": "24px",
+                        "3xl": "64px",
+                        "base": "8px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    fontSize: {
+                        "title-md": ["18px", { lineHeight: "26px", fontWeight: "500" }],
+                        "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "display-sm": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["30px", { lineHeight: "38px", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex flex-col h-full py-lg fixed right-0 top-0 w-[280px] bg-on-background shadow-lg z-50">
+<div class="px-lg mb-xl flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist abstract logo for a corporate enterprise platform, featuring a geometric shape representing data storage or documents. The logo is rendered in dark mode with a white primary icon against a dark background, reflecting a professional SaaS application interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArag4Fo2mSZwgcDIJj8JRohU915OLeWYJkaeupyBDkZVFrXibGWokYD4WIN1oVg7NulOGPiobkIe26wB5BFVBCKKYB0cs_an2fZ2RbL8KyYx_jVDiMTXet_DOTxCXM7I3j6qc9dIpP-5p-9xibY4EBiSIDCBxNmn7Eu7CTp-FV15Bwq_908g4TQEoNYHTowFSBJ1uu4lTCD_olqZ5uAhT06K08wSApzZb2b53uSPCLz0PUMyLlz1k61w"/>
+</div>
+<div>
+<h1 class="font-title-lg text-title-lg font-bold text-primary-fixed">DMS Enterprise</h1>
+<p class="font-label-md text-label-md text-surface-variant">V 2.1.0</p>
+</div>
+</div>
+<div class="px-lg mb-lg">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-opacity-90 transition-colors shadow-sm">
+<span class="material-symbols-outlined">upload</span>
+                Upload Files
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto mt-4 space-y-2">
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-title-md">Home</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-title-md text-title-md">Documents</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container border-r-4 border-primary-fixed-dim px-4 py-3 rounded-l-full mx-4 shadow-sm translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined filled">inventory_2</span>
+<span class="font-title-md text-title-md font-bold">Archives</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-title-md text-title-md">Workflow</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-title-md text-title-md">Reports</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+<span class="font-title-md text-title-md">Access Control</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-variant/20 space-y-2">
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">Storage Settings</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant px-4 py-3 hover:bg-primary hover:text-on-primary-container transition-all mx-4 rounded-xl" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-title-md text-title-md">Log Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:mr-[280px] h-full overflow-hidden bg-surface">
+<!-- TopNavBar (from JSON) -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 bg-surface border-b border-outline-variant shadow-sm z-40 shrink-0">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Toggle (hidden on md) -->
+<button class="md:hidden p-2 text-on-surface hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[28px] text-primary">inventory_2</span>
+                    Electronic Archive Center
+                </div>
+</div>
+<div class="hidden lg:flex items-center gap-lg">
+<div class="flex gap-4">
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-3 py-1.5 rounded-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-3 py-1.5 rounded-md" href="#">Recent</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-3 py-1.5 rounded-md" href="#">Shared</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md px-3 py-1.5 opacity-80 scale-95 transition-all font-bold" href="#">Starred</a>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full ml-2 overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a business executive in a modern office environment, warm lighting, conveying trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-9GYGumzdZH_wYJd16buB6_LKDYjMr1azUOa03aaHxnh7R6qi7OVQ_3NDbJpJSS7m_3WZzNh3tUsP3L2U2WUe93ggHg9Ew6t851UF-wyvptjD2zqMIOiwUbTRI2_S7SOoQb30G90oLZFe39bhYnWK7cEDmM-hjL06LujeENDcEsuBZN5oX79fiB4Ea38ZqW1lTlqdQsz5SNQjwvweRGvjyIiuU4gW6GHUy7gTIwmRe1_yhWzKmyIcQg"/>
+</div>
+</div>
+</header>
+<!-- Page Header & Actions -->
+<div class="px-margin-desktop py-lg bg-surface-container-lowest border-b border-surface-container-high flex flex-col md:flex-row justify-between items-start md:items-end gap-4 shrink-0">
+<div>
+<nav class="flex items-center text-sm text-on-surface-variant mb-2">
+<a class="hover:text-primary transition-colors" href="#">لوحة القيادة</a>
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_left</span>
+<span class="text-on-surface font-medium">الأرشيف الإلكتروني</span>
+</nav>
+<h2 class="font-display-sm text-display-sm text-on-background mb-4">الأرشيف الإلكتروني</h2>
+<!-- Storage Indicator -->
+<div class="flex items-center gap-4 bg-surface p-3 rounded-lg border border-surface-container-high w-full md:w-80 shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+<div class="p-2 bg-primary-container rounded-md text-on-primary-container">
+<span class="material-symbols-outlined">cloud_done</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">استهلاك التخزين</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">78 GB / 100 GB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none px-6 py-2.5 bg-surface text-primary border border-outline-variant rounded-lg font-title-md text-title-md hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    تصدير الكل
+                </button>
+<button class="flex-1 md:flex-none px-6 py-2.5 bg-primary text-on-primary rounded-lg font-title-md text-title-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2 shadow-[0_4px_8px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                    رفع ملف للأرشيف
+                </button>
+</div>
+</div>
+<!-- Filter & Search Bar -->
+<div class="px-margin-desktop py-md bg-surface-container-lowest border-b border-surface-container-high shrink-0 z-30">
+<div class="flex flex-col xl:flex-row gap-lg justify-between items-start xl:items-center">
+<!-- Search -->
+<div class="relative w-full xl:w-96 group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pr-10 pl-4 py-2 bg-surface-container-low border border-transparent focus:border-primary focus:bg-surface rounded-lg font-body-md text-on-surface placeholder:text-on-surface-variant/70 transition-all outline-none" placeholder="البحث في الأرشيف الشامل..." type="text"/>
+</div>
+<!-- Tabs & Filters -->
+<div class="flex flex-wrap items-center gap-4 w-full xl:w-auto overflow-x-auto pb-2 xl:pb-0">
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="px-4 py-1.5 bg-surface text-primary rounded-md font-label-md text-label-md shadow-sm border border-surface-container-high">الكل</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-md font-label-md text-label-md transition-colors">تقارير</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-md font-label-md text-label-md transition-colors">عقود</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-md font-label-md text-label-md transition-colors">مستندات OCR</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-md font-label-md text-label-md transition-colors">ملفات مالية</button>
+</div>
+<div class="h-6 w-px bg-outline-variant hidden xl:block"></div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<select class="appearance-none pl-8 pr-4 py-1.5 bg-surface border border-outline-variant rounded-lg font-label-md text-on-surface cursor-pointer focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>جميع الفروع</option>
+<option>الفرع الرئيسي</option>
+<option>فرع جدة</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none pl-8 pr-4 py-1.5 bg-surface border border-outline-variant rounded-lg font-label-md text-on-surface cursor-pointer focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>جميع القطاعات</option>
+<option>قطاع المطاعم</option>
+<option>قطاع الفنادق</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace (Scrollable) -->
+<div class="flex-1 overflow-hidden flex relative">
+<!-- Left Grid Area -->
+<div class="flex-1 overflow-y-auto p-margin-desktop">
+<!-- Folder System -->
+<div class="mb-xl">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-md">مجلدات القطاعات</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Folder Card 1 -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-4 flex items-center gap-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-fixed/30 rounded-lg flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-[28px]">folder</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">قطاع المطاعم</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">1,245 ملف</p>
+</div>
+</div>
+<!-- Folder Card 2 -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-4 flex items-center gap-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-tertiary-fixed/30 rounded-lg flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-[28px]">folder</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">قطاع الفنادق</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">892 ملف</p>
+</div>
+</div>
+<!-- Folder Card 3 -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-4 flex items-center gap-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-primary-fixed/30 rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-[28px]">folder</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">الشؤون القانونية</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">430 ملف</p>
+</div>
+</div>
+<!-- Folder Card 4 -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-4 flex items-center gap-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all cursor-pointer group">
+<div class="w-12 h-12 bg-error-container/50 rounded-lg flex items-center justify-center text-error group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined filled text-[28px]">folder</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">الموارد البشرية</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">3,100 ملف</p>
+</div>
+</div>
+</div>
+</div>
+<!-- File Grid -->
+<div>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-lg text-title-lg text-on-surface">الملفات الحديثة</h3>
+<div class="flex gap-2">
+<button class="p-1.5 text-primary bg-surface-container-low rounded-md"><span class="material-symbols-outlined text-[20px]">grid_view</span></button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-low rounded-md"><span class="material-symbols-outlined text-[20px]">view_list</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+<!-- File Card 1 (Active/Selected State) -->
+<div class="bg-surface-container-lowest border-2 border-primary rounded-xl p-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] relative flex flex-col group">
+<div class="absolute top-3 left-3 opacity-100">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[10px] font-bold tracking-wide">مالي</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 mb-2">
+<span class="material-symbols-outlined text-[48px] text-error mb-2">picture_as_pdf</span>
+<h4 class="font-title-md text-title-md text-center line-clamp-2 px-4">تقرير الأرباح السنوي - فرع الرياض 2023.pdf</h4>
+</div>
+<div class="mt-auto border-t border-surface-container-high pt-3 flex flex-wrap justify-between items-center gap-y-2">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">store</span>
+<span class="font-label-sm text-label-sm">الرياض</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">v2.1</span>
+<div class="w-full flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>1.2 MB</span>
+<span>12 مايو 2024</span>
+</div>
+</div>
+</div>
+<!-- File Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all relative flex flex-col group cursor-pointer">
+<div class="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded text-[10px] font-bold tracking-wide">عقد</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 mb-2">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-2">description</span>
+<h4 class="font-title-md text-title-md text-center line-clamp-2 px-4">عقد توريد معدات مطابخ - شركة الأفق.docx</h4>
+</div>
+<div class="mt-auto border-t border-surface-container-high pt-3 flex flex-wrap justify-between items-center gap-y-2">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">store</span>
+<span class="font-label-sm text-label-sm">الرئيسي</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">v1.0</span>
+<div class="w-full flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>450 KB</span>
+<span>10 مايو 2024</span>
+</div>
+</div>
+</div>
+<!-- File Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all relative flex flex-col group cursor-pointer">
+<div class="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container rounded text-[10px] font-bold tracking-wide">مالي</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 mb-2">
+<span class="material-symbols-outlined text-[48px] text-[#006E18] mb-2">table_view</span>
+<h4 class="font-title-md text-title-md text-center line-clamp-2 px-4">ميزانية الربع الأول - قطاع المطاعم.xlsx</h4>
+</div>
+<div class="mt-auto border-t border-surface-container-high pt-3 flex flex-wrap justify-between items-center gap-y-2">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">store</span>
+<span class="font-label-sm text-label-sm">جدة</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">v3.2</span>
+<div class="w-full flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>3.4 MB</span>
+<span>08 مايو 2024</span>
+</div>
+</div>
+</div>
+<!-- File Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-4 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-primary-fixed-dim transition-all relative flex flex-col group cursor-pointer">
+<div class="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded text-[10px] font-bold tracking-wide">مستند OCR</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 mb-2">
+<span class="material-symbols-outlined text-[48px] text-outline mb-2">document_scanner</span>
+<h4 class="font-title-md text-title-md text-center line-clamp-2 px-4">فاتورة مورد - مؤسسة البناء الحديث.pdf</h4>
+</div>
+<div class="mt-auto border-t border-surface-container-high pt-3 flex flex-wrap justify-between items-center gap-y-2">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">store</span>
+<span class="font-label-sm text-label-sm">الرئيسي</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-low px-1.5 py-0.5 rounded text-on-surface-variant">v1.0</span>
+<div class="w-full flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>890 KB</span>
+<span>05 مايو 2024</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Metadata Panel (Sidebar Drawer) -->
+<aside class="hidden lg:flex flex-col w-[320px] bg-surface-container-lowest border-r border-surface-container-high shadow-[-4px_0_12px_rgba(0,0,0,0.02)] shrink-0 overflow-hidden h-full z-20">
+<div class="p-4 border-b border-surface-container-high flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">تفاصيل الملف</h3>
+<button class="p-1 hover:bg-surface-variant rounded-full text-on-surface-variant"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="flex-1 overflow-y-auto p-4 custom-scrollbar">
+<!-- Preview Thumbnail -->
+<div class="w-full h-40 bg-surface-container rounded-lg mb-6 border border-outline-variant flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-high to-surface-container-lowest opacity-50"></div>
+<span class="material-symbols-outlined text-[64px] text-error relative z-10">picture_as_pdf</span>
+</div>
+<!-- Basic Info -->
+<div class="mb-6">
+<h4 class="font-title-md text-title-md text-on-surface mb-2 leading-tight">تقرير الأرباح السنوي - فرع الرياض 2023.pdf</h4>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary-container text-on-primary-container rounded-md font-label-sm text-label-sm">مالي</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-md font-label-sm text-label-sm flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> سري</span>
+</div>
+<div class="grid grid-cols-2 gap-y-3 font-label-md text-label-md">
+<div class="text-on-surface-variant">الحجم:</div>
+<div class="text-on-surface font-medium text-left">1.2 MB</div>
+<div class="text-on-surface-variant">النوع:</div>
+<div class="text-on-surface font-medium text-left">PDF Document</div>
+<div class="text-on-surface-variant">الفرع:</div>
+<div class="text-on-surface font-medium text-left">فرع الرياض</div>
+<div class="text-on-surface-variant">المالك:</div>
+<div class="text-on-surface font-medium text-left">أحمد محمد</div>
+</div>
+</div>
+<div class="h-px w-full bg-surface-container-high mb-6"></div>
+<!-- Retention Policy -->
+<div class="mb-6">
+<h5 class="font-title-md text-title-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">policy</span>
+                            سياسة الحفظ
+                        </h5>
+<div class="bg-surface-container p-3 rounded-lg border border-surface-variant">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface">مدة الحفظ القانوني</span>
+<span class="font-label-md text-label-md font-bold text-primary">5 سنوات</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 20%"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ينتهي في: 12 مايو 2029</p>
+</div>
+</div>
+<!-- Version History -->
+<div class="mb-6">
+<h5 class="font-title-md text-title-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+                            سجل النسخ
+                        </h5>
+<div class="space-y-3 relative before:absolute before:right-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<div class="flex gap-3 relative z-10">
+<div class="w-4 h-4 rounded-full bg-primary mt-1 border-2 border-surface-container-lowest"></div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">v2.1 (الحالية)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">اليوم, 10:30 ص • بواسطة أحمد محمد</div>
+</div>
+</div>
+<div class="flex gap-3 relative z-10">
+<div class="w-4 h-4 rounded-full bg-surface-variant mt-1 border-2 border-surface-container-lowest"></div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">v2.0</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">10 مايو, 14:15 م • بواسطة سارة خالد</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Trail -->
+<div>
+<h5 class="font-title-md text-title-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">manage_search</span>
+                            سجل التدقيق
+                        </h5>
+<div class="bg-surface-container-low rounded-lg p-1">
+<div class="p-2 border-b border-surface-container-high flex items-start gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">download</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="font-bold">عمر عبدالله</span> قام بتحميل الملف</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">منذ ساعتين</p>
+</div>
+</div>
+<div class="p-2 flex items-start gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="font-bold">أحمد محمد</span> قام بتعديل البيانات</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">اليوم, 10:30 ص</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-4 border-t border-surface-container-high bg-surface-container-lowest flex gap-2">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-lg font-title-md text-title-md hover:bg-primary-container transition-colors shadow-sm">فتح</button>
+<button class="p-2 border border-outline-variant text-on-surface rounded-lg hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">share</span></button>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

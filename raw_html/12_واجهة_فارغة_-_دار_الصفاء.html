@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>شاشة الواجهات الفارغة - أرشيف إلكتروني | منصة المشاريع</title>
+<!-- Tailwind CSS Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bfc9c3",
+                        "outline": "#707974",
+                        "inverse-on-surface": "#ebf1ff",
+                        "background": "#f9f9ff",
+                        "surface-tint": "#2b6954",
+                        "primary-fixed-dim": "#95d3ba",
+                        "surface-dim": "#d3daea",
+                        "surface": "#f9f9ff",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-primary-container": "#80bea6",
+                        "tertiary": "#4a2400",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdcc3",
+                        "surface-container-high": "#e2e8f8",
+                        "surface-container-low": "#f0f3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#dde1ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#6a3700",
+                        "surface-container-highest": "#dce2f3",
+                        "secondary-container": "#708cfd",
+                        "secondary": "#3755c3",
+                        "primary-fixed": "#b0f0d6",
+                        "surface-container": "#e7eefe",
+                        "on-background": "#151c27",
+                        "on-surface": "#151c27",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "primary-container": "#064e3b",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#00217a",
+                        "on-tertiary-fixed": "#2f1500",
+                        "primary": "#003527",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-primary-fixed": "#002117",
+                        "inverse-surface": "#2a313d",
+                        "inverse-primary": "#95d3ba",
+                        "on-tertiary-container": "#ff9939",
+                        "on-surface-variant": "#404944",
+                        "on-secondary-fixed": "#001453",
+                        "surface-variant": "#dce2f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "base": "8px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Hidden on Mobile, Visible on md+) -->
+<aside class="hidden md:flex flex-col right-0 w-[280px] h-screen z-40 bg-primary-container dark:bg-primary-container border-l border-outline-variant shadow-lg fixed right-0 top-0">
+<!-- Header -->
+<div class="p-6 border-b border-on-primary-container/10 flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-on-primary-container/20 flex items-center justify-center shrink-0">
+<img alt="شعار المنصة" class="w-6 h-6 object-contain" data-alt="A small, stylized corporate logo icon for an enterprise resource planning system, featuring geometric shapes in deep green and white on a transparent background, professional and clean design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9WdbToWm-YuIyztr28J1ndom-dx7f1HIEU-qqWQKaJQ5FT8gBG2sF-7Qgx5yotUcMqgfArjOmFqLs6e7svxeS1q1Tg8V1tb8M90ApRA87ixhhH7nu0wys1_WggkngljrsGQe6NKG0WBjZ9DBEZ5DPO6IvJS-oxKhmjwZ-sDaWLdS6Xbv2zd2HKnbbTo66hNbxQw9ZlOdLuC_YeY1UJrRMQIgttz_yxXdqx6Ddq3RIIeXUJw2_8x1Myw"/>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-on-primary-container">المؤسسة الكبرى</h2>
+<p class="text-label-md font-label-md text-on-primary-container/80">نظام إدارة الموارد</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="p-6 border-b border-on-primary-container/10">
+<button class="w-full flex items-center justify-center gap-2 bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-title-md text-title-md">إضافة مستند جديد</span>
+</button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-4 overflow-y-auto">
+<ul class="flex flex-col space-y-1">
+<!-- Inactive Tab -->
+<li>
+<a class="flex items-center gap-3 text-on-primary-container/80 dark:text-primary-fixed-dim/80 hover:bg-on-primary-fixed-variant/10 pr-6 py-3 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                        لوحة التحكم
+                    </a>
+</li>
+<!-- Active Tab -->
+<li>
+<a class="flex items-center gap-3 bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-r-full mr-0 pr-6 py-3 border-r-4 border-primary-fixed-dim font-label-md text-label-md Active: translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="description">description</span>
+                        إدارة المستندات
+                    </a>
+</li>
+<!-- Inactive Tabs -->
+<li>
+<a class="flex items-center gap-3 text-on-primary-container/80 dark:text-primary-fixed-dim/80 hover:bg-on-primary-fixed-variant/10 pr-6 py-3 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="admin_panel_settings">admin_panel_settings</span>
+                        إدارة الصلاحيات
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-primary-container/80 dark:text-primary-fixed-dim/80 hover:bg-on-primary-fixed-variant/10 pr-6 py-3 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                        إعدادات النظام
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-primary-container/80 dark:text-primary-fixed-dim/80 hover:bg-on-primary-fixed-variant/10 pr-6 py-3 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+                        سجل النشاطات
+                    </a>
+</li>
+</ul>
+</nav>
+<!-- Footer -->
+<div class="p-4 mt-auto border-t border-on-primary-container/10">
+<a class="flex items-center gap-3 text-on-primary-container/80 dark:text-primary-fixed-dim/80 hover:bg-on-primary-fixed-variant/10 pr-6 py-3 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                تسجيل الخروج
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-h-screen md:pr-[280px]">
+<!-- TopNavBar -->
+<header class="flex flex-row-reverse justify-between items-center w-full px-margin-desktop h-16 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm docked full-width top-0 z-30 sticky top-0">
+<!-- Brand / Primary Action Area (RTL Left side) -->
+<div class="flex items-center gap-4 flex-row-reverse">
+<a class="text-title-lg font-title-lg font-bold text-primary dark:text-primary-fixed-dim" href="#">
+                    منصة المشاريع
+                </a>
+</div>
+<!-- Navigation Links (Center) -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-2 py-1 rounded font-headline-md text-headline-md font-title-md text-title-md" href="#">الرئيسية</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 px-2 hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors font-headline-md text-headline-md font-title-md text-title-md" href="#">التقارير</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-2 py-1 rounded font-headline-md text-headline-md font-title-md text-title-md" href="#">المستخدمين</a>
+</nav>
+<!-- Actions Area (RTL Right side) -->
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors Active: scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors Active: scale-95 transition-transform duration-150 relative">
+<span class="material-symbols-outlined text-[24px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 bg-secondary-container text-on-secondary-container hover:bg-secondary-container/90 px-4 py-2 rounded-lg font-title-md text-title-md transition-colors Active: scale-95 transition-transform duration-150">
+                    المساعدة
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant cursor-pointer ml-2">
+<img alt="صورة الملف الشخصي للمسؤول" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate administrator in a modern office environment, wearing a neat blazer. The lighting is soft and professional, conveying trust and competence. The background is slightly blurred." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHvzurjgGcXEO6K4zCtgbaqYh354YLfK9Ompp2w3WZ4dWtGERfEBJ5HXAcISZIzqAW9ccwZuVF_PvuLP4daZgsAfE28phVOskR_0kHX8QTrSVkcUQyCznJ4afNmRamK_nibRGsewZGjeODK-NEKheTGa-O-88ChNM_gqjBMvYziLl6LkrDKnllpQk5dvSTeBW-9xzF5YZddTC1NOKm2kgVl8Tnh8Tc3IFqhKVFPa2ALB-ywvXCPBDqpg"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace: Empty State -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop flex flex-col items-center justify-center relative overflow-hidden bg-surface">
+<!-- Background Subtle Pattern (Decorative) -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #064E3B 1px, transparent 0); background-size: 32px 32px;"></div>
+<div class="max-w-xl w-full text-center relative z-10 p-12 bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col items-center">
+<!-- Illustration -->
+<div class="w-64 h-64 mb-8 relative">
+<img alt="مجلد فارغ" class="w-full h-full object-contain" data-alt="A friendly, modern enterprise vector illustration of an empty digital folder or vault. The style is clean, using a color palette of deep green and subtle greys on a white background. The folder is slightly open, revealing empty space inside. The overall mood is approachable and professional, designed for an empty state in a SaaS application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5htIDdDQySuNsEQlmAfgi0KFJP7lVDKuRHj-IBDiSlhQfx6tFO_ryhX_oarI5rO6WqmK6ZUxC024dS7T5_RcjGk4gobnK5waQIsaQu3PtCvAU_5Q1DKmW9VAx2UHCrj9DOBpYICFX-kQczO4exZgaND69FwLjSqQP7b1Pyob6wdPEhY55ZFE6B-KQTFzhprSo6FX77hMs_rRhHXLAyYniU3w-3WchGEgUoxAp-kc7rx-VrxL4T5ZiuQ"/>
+</div>
+<!-- Text Content -->
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-4">لا توجد مستندات مؤرشفة حتى الآن</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-md mx-auto mb-10">
+                    ابدأ بتنظيم أرشيفك الإلكتروني عن طريق رفع الملفات أو سحبها هنا مباشرة.
+                </p>
+<!-- Primary CTA -->
+<button class="bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-8 py-4 rounded-xl font-title-lg text-title-lg shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+                    رفع أول مستند للأرشيف
+                </button>
+<!-- Drag and drop zone hint -->
+<div class="mt-8 pt-8 border-t border-dashed border-outline-variant w-full">
+<p class="text-label-md font-label-md text-outline flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                        يمكنك أيضاً سحب وإفلات الملفات في هذه المساحة
+                    </p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>دار الصفاء - شاشة التحميل</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "tertiary": "#4a2400",
+                        "background": "#f9f9ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#00217a",
+                        "inverse-primary": "#95d3ba",
+                        "surface-container-low": "#f0f3ff",
+                        "tertiary-fixed": "#ffdcc3",
+                        "surface": "#f9f9ff",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-tertiary-container": "#ff9939",
+                        "on-background": "#151c27",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#2b6954",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "primary-container": "#064e3b",
+                        "tertiary-container": "#6a3700",
+                        "outline-variant": "#bfc9c3",
+                        "inverse-surface": "#2a313d",
+                        "surface-container": "#e7eefe",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#708cfd",
+                        "on-secondary-fixed": "#001453",
+                        "on-surface": "#151c27",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "outline": "#707974",
+                        "secondary-fixed": "#dde1ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e2e8f8",
+                        "on-surface-variant": "#404944",
+                        "on-error": "#ffffff",
+                        "secondary": "#3755c3",
+                        "on-primary-fixed": "#002117",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "primary": "#003527",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "surface-container-highest": "#dce2f3",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "primary-fixed": "#b0f0d6",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#80bea6",
+                        "surface-variant": "#dce2f3",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "3xl": "64px",
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "base": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .loading-ring::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            border: 2px solid #80bea6; /* on-primary-container */
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes subtle-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+        @keyframes progress-fill {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        .progress-bar {
+            animation: progress-fill 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-primary-container text-on-primary-container h-screen w-screen overflow-hidden flex flex-col justify-between items-center relative font-body-lg">
+<!-- Background Ambient Elements -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary-fixed-dim blur-3xl mix-blend-screen float-anim"></div>
+<div class="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-secondary blur-3xl mix-blend-screen float-anim" style="animation-delay: -3s;"></div>
+</div>
+<!-- Top Spacer -->
+<div class="w-full flex-1"></div>
+<!-- Center Content -->
+<div class="flex flex-col items-center justify-center z-10 w-full max-w-md px-margin-desktop">
+<!-- Logo Area -->
+<div class="relative w-32 h-32 mb-xl flex items-center justify-center">
+<div class="absolute inset-0 loading-ring"></div>
+<!-- Refined abstract logo shape instead of image for purely typographic/shape driven splash -->
+<div class="relative z-10 w-24 h-24 bg-surface rounded-xl shadow-2xl flex items-center justify-center rotate-45 transform transition-transform duration-1000">
+<span class="material-symbols-outlined text-primary-container text-5xl -rotate-45" style="font-variation-settings: 'FILL' 1;">
+                    home_work
+                </span>
+</div>
+</div>
+<!-- Typography -->
+<h1 class="font-display-lg text-display-lg text-on-primary mb-sm tracking-tight text-center">
+            نظام دار الصفاء الذكي
+        </h1>
+<p class="font-body-lg text-body-lg text-on-primary-container/80 text-center mb-3xl max-w-[280px]">
+            جاري تهيئة بيئة العمل وتحميل البيانات الأساسية للمنصة...
+        </p>
+<!-- Progress Indicator -->
+<div class="w-full max-w-[240px]">
+<div class="h-1 w-full bg-primary-fixed/20 rounded-full overflow-hidden backdrop-blur-sm">
+<div class="h-full bg-primary-fixed progress-bar rounded-full shadow-[0_0_10px_rgba(176,240,214,0.5)]"></div>
+</div>
+<div class="flex justify-between items-center mt-md text-on-primary-container/60">
+<span class="font-label-md text-label-md">تهيئة النظام</span>
+<span class="font-label-md text-label-md" id="loading-percent">0%</span>
+</div>
+</div>
+</div>
+<!-- Bottom Footer Area -->
+<div class="w-full flex-1 flex flex-col justify-end items-center pb-xl z-10">
+<div class="flex flex-col items-center opacity-70">
+<span class="material-symbols-outlined text-on-primary-container mb-xs text-xl">
+                shield_lock
+            </span>
+<p class="font-label-md text-label-md text-on-primary-container tracking-widest uppercase">
+                v3.4.0 Enterprise
+            </p>
+</div>
+</div>
+<script>
+        // Simple script to update percentage to match progress bar animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const percentEl = document.getElementById('loading-percent');
+            let progress = 0;
+            const duration = 2500; // ms
+            const intervalTime = 50;
+            const steps = duration / intervalTime;
+            const increment = 100 / steps;
+
+            const interval = setInterval(() => {
+                progress += increment;
+                // Add some non-linear feeling to the text counter to loosely match cubic-bezier
+                let displayVal = Math.floor(progress);
+                if (displayVal > 100) displayVal = 100;
+                
+                percentEl.textContent = displayVal + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    percentEl.textContent = '100%';
+                    // Optional: trigger navigation or reveal after load
+                    setTimeout(() => {
+                         percentEl.textContent = 'جاهز';
+                    }, 500);
+                }
+            }, intervalTime);
+        });
+    </script>
+</body></html>

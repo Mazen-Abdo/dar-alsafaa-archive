@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Audit Log &amp; Security Trail Workspace - Dar Al Safaa</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d3daea",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#6a3700",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "outline-variant": "#bfc9c3",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-background": "#151c27",
+                        "surface-container-highest": "#dce2f3",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "inverse-primary": "#95d3ba",
+                        "tertiary": "#4a2400",
+                        "outline": "#707974",
+                        "on-primary-fixed": "#002117",
+                        "on-secondary-container": "#00217a",
+                        "surface-container": "#e7eefe",
+                        "tertiary-fixed": "#ffdcc3",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "on-primary-container": "#80bea6",
+                        "primary": "#003527",
+                        "surface-container-high": "#e2e8f8",
+                        "secondary-container": "#708cfd",
+                        "on-tertiary-container": "#ff9939",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#3755c3",
+                        "primary-fixed": "#b0f0d6",
+                        "secondary-fixed": "#dde1ff",
+                        "primary-container": "#064e3b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-tint": "#2b6954",
+                        "on-surface-variant": "#404944",
+                        "on-surface": "#151c27",
+                        "on-secondary-fixed": "#001453",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#2a313d",
+                        "surface-variant": "#dce2f3",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "margin-desktop": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "title-lg": ["IBM Plex Sans Arabic"],
+                        "label-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "title-md": ["IBM Plex Sans Arabic"],
+                        "display-sm": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "display-sm": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Diff Colors */
+        .diff-added { background-color: rgba(6, 78, 59, 0.1); color: #064E3B; }
+        .diff-removed { background-color: rgba(186, 26, 26, 0.1); color: #BA1A1A; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen overflow-hidden flex font-body-lg antialiased">
+<!-- SideNavBar -->
+<aside class="fixed right-0 top-0 h-full w-[280px] bg-inverse-surface text-primary-fixed-dim font-label-md flex flex-col border-l border-outline-variant/20 shadow-sm z-30 transition-all duration-200 ease-in-out">
+<!-- Header -->
+<div class="p-6 border-b border-outline-variant/20 flex flex-col items-center justify-center space-y-4">
+<img alt="Platform Logo" class="w-16 h-16 rounded-lg object-contain bg-surface-container-lowest p-2 shadow-sm" data-alt="A refined, modern corporate logo for 'Dar Al Safaa' featuring subtle geometric Islamic patterns in gold and deep green, set against a dark premium background. The style is minimalist and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNKu65rlVA0__TEma2eXJMIeUXOO0ZAb2waEbSVeXb8LkRqmQRHgCuf-WSlEqCoJHkXLBETlzirfqtkCQmKPlJjPz2Of5qfUre3jf9sG7eXulPdAH6lMINiABhlu1SL2jTn08RdHnu-oeul8IgfuDQFAkfw2HqfhZJ3PapcOHsjhGRNLAymqDdMOIqq07U0CWxaIxWK1EozEF5xptxZuSeq1rHRbJ3pO4MVEwC8bCqoulb7UjGGZP3w"/>
+<div class="text-center">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary-fixed-dim">نظام التدقيق</h1>
+<p class="text-surface-variant text-label-md mt-1 opacity-80">الأمان والرقابة</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 overflow-y-auto py-4 space-y-1">
+<a class="flex items-center gap-4 text-surface-variant p-4 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span>لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container border-r-4 border-primary-fixed-dim p-4 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-bold">سجلات التدقيق</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant p-4 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span>إدارة المستخدمين</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant p-4 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">admin_panel_settings</span>
+<span>إعدادات الأمان</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant p-4 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">assessment</span>
+<span>تقارير النظام</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant p-4 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications_active</span>
+<span>مركز التنبيهات</span>
+</a>
+</nav>
+<!-- CTA & Footer -->
+<div class="p-4 border-t border-outline-variant/20 space-y-2">
+<button class="w-full py-3 bg-primary-fixed-dim text-on-primary-fixed font-bold rounded-lg hover:bg-primary-fixed transition-colors flex justify-center items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sm">download</span>
+                تحميل التقرير
+            </button>
+<a class="flex items-center gap-4 text-surface-variant p-3 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 rounded transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+<span>المساعدة</span>
+</a>
+<a class="flex items-center gap-4 text-surface-variant p-3 opacity-80 hover:bg-surface-container-highest/10 hover:opacity-100 rounded transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 mr-[280px] flex flex-col h-full bg-background relative transition-all duration-300" id="main-content">
+<!-- TopNavBar -->
+<header class="h-16 bg-surface flex justify-between items-center w-full px-margin-desktop border-b border-outline-variant flat no shadows font-title-md z-20">
+<!-- Brand / Left Side (RTL) -->
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">دار الصفاء الذكية</span>
+</div>
+<!-- Search Bar (on_left in JSON, but adapting for RTL layout) -->
+<div class="flex-1 max-w-md mx-8">
+<div class="relative flex items-center w-full h-10 rounded-full bg-surface-container-high overflow-hidden focus-within:ring-2 focus-within:ring-primary transition-all">
+<div class="grid place-items-center h-full w-12 text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="peer h-full w-full outline-none text-body-md text-on-surface bg-transparent pr-2 placeholder-on-surface-variant/70" id="global-search" placeholder="البحث في النظام..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-2 text-primary">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-3 p-1 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95">
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover shadow-sm border border-outline-variant" data-alt="A professional headshot of a corporate executive in a modern office setting. The lighting is bright and clean, typical of a high-end enterprise platform profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg7Clflh7amH1YqaCli3ywXV-4yUL2_MqlaAB5eCBnvOa1cnlAls-GmB2jNB0-Tnjj6KXR4DNdUKptxyL-TfiS8hI1UDKa2VV96IOjbtyL08fz4CJunHnLvfojONMPD9euRo3n2c8dA53PbyprshffQ3romRf3Em75F7VmzHDJnwkvY7_4k2d2kyTJu_yuqrxRMLoeqBHedpElprv9g3yjvGC08sE-rRGW3caLCi3iJrMxYHDM1h-9Gw"/>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-gutter hide-scrollbar relative">
+<!-- Page Header Section -->
+<div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex text-body-md text-on-surface-variant mb-2">
+<ol class="inline-flex items-center space-x-1 space-x-reverse md:space-x-2">
+<li class="inline-flex items-center hover:text-primary transition-colors cursor-pointer">
+                          لوحة القيادة
+                        </li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_left</span>
+<span class="hover:text-primary transition-colors cursor-pointer">الإدارة</span>
+</div>
+</li>
+<li aria-current="page">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_left</span>
+<span class="font-medium text-primary">سجل الرقابة والتدقيق</span>
+</div>
+</li>
+</ol>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">سجل الرقابة والتدقيق الشامل</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-surface-container border border-outline-variant text-on-surface px-4 py-2.5 rounded-lg font-label-md hover:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">print</span>
+                        طباعة
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-md hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">download</span>
+                        تصدير سجل التدقيق (PDF/Excel)
+                    </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Card 1: Total Logged Events -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="flex items-center text-primary text-label-md bg-primary-container/5 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm ml-1">trending_up</span>
+                            +12%
+                        </span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">إجمالي الأحداث المسجلة</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">14,280</h3>
+</div>
+</div>
+<!-- Card 2: Security Warnings (Yellow Theme) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col justify-between border-b-4 border-b-on-tertiary-container hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-[#ff9939]/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">warning</span>
+</div>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">تنبيهات أمنية</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">42</h3>
+</div>
+</div>
+<!-- Card 3: Failed Login Attempts (Red Theme) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col justify-between border-b-4 border-b-error hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined">gpp_maybe</span>
+</div>
+<span class="flex items-center text-error text-label-md bg-error-container/50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm ml-1">trending_down</span>
+                            -5%
+                        </span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">محاولات دخول فاشلة</p>
+<h3 class="font-display-sm text-display-sm text-on-surface">18</h3>
+</div>
+</div>
+<!-- Card 4: Critical System Changes -->
+<div class="bg-primary text-on-primary rounded-xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.1)] flex flex-col justify-between hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-shadow relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 0% 0%, #ffffff 0%, transparent 50%);"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-on-primary/20 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+</div>
+<div class="relative z-10">
+<p class="text-primary-fixed-dim font-label-md mb-1">تغييرات الصلاحيات والحذف</p>
+<h3 class="font-display-sm text-display-sm">12</h3>
+</div>
+</div>
+</div>
+<!-- Complex Filter Bar (Glassmorphism/Surface) -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/40 rounded-xl p-4 mb-6 shadow-sm sticky top-0 z-10">
+<div class="flex flex-wrap md:flex-nowrap gap-4 items-center">
+<!-- Search Input -->
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface pl-4 pr-10 py-2 rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary text-body-md transition-shadow" placeholder="بحث بالمستخدم، IP، أو الإجراء..." type="text"/>
+</div>
+<!-- Date Range -->
+<div class="relative min-w-[220px]">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant text-[20px]">date_range</span>
+<input class="w-full bg-surface pl-4 pr-10 py-2 rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary text-body-md text-center transition-shadow cursor-pointer" placeholder="من تاريخ - إلى تاريخ" readonly="" type="text" value="01 نوفمبر - 07 نوفمبر 2023"/>
+</div>
+<!-- Event Category Dropdown -->
+<div class="min-w-[160px]">
+<select class="w-full bg-surface px-4 py-2 rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary text-body-md appearance-none cursor-pointer">
+<option value="">جميع الإجراءات</option>
+<option value="login">تسجيل دخول</option>
+<option value="perms">تغيير صلاحيات</option>
+<option value="import">استيراد بيانات</option>
+<option value="ocr">معالجة OCR</option>
+<option value="delete">أرشفة/حذف</option>
+<option value="settings">تعديل إعدادات</option>
+</select>
+</div>
+<!-- Severity Dropdown -->
+<div class="min-w-[140px]">
+<select class="w-full bg-surface px-4 py-2 rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary text-body-md appearance-none cursor-pointer">
+<option value="">الخطورة: الكل</option>
+<option value="info">معلومة</option>
+<option value="warning">تحذير</option>
+<option value="critical">حرج</option>
+</select>
+</div>
+<!-- Sector Dropdown -->
+<div class="min-w-[140px]">
+<select class="w-full bg-surface px-4 py-2 rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary text-body-md appearance-none cursor-pointer">
+<option value="">القطاع/الفرع</option>
+<option value="riyadh">الإدارة العامة - الرياض</option>
+<option value="jeddah">فرع جدة</option>
+<option value="dammam">فرع الدمام</option>
+</select>
+</div>
+<button class="p-2 bg-surface border border-outline-variant/50 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors tooltip" title="تصفية متقدمة">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<!-- Main Data Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden mb-8">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-md border-b border-outline-variant/30 sticky top-0">
+<tr>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">التاريخ والوقت</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">المستخدم</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">نوع الإجراء</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">القطاع والفرع</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">المورد المستهدف</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">عنوان IP والجهاز</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap">درجة الخطورة</th>
+<th class="py-3 px-4 font-semibold whitespace-nowrap text-center">التفاصيل</th>
+</tr>
+</thead>
+<tbody class="text-body-md divide-y divide-outline-variant/20">
+<!-- Row 1 (Active/Selected State representing the open drawer) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-primary-container/5 border-l-4 border-l-primary cursor-pointer" onclick="openDrawer()">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">07 نوفمبر 2023</span>
+<span class="text-on-surface-variant text-label-sm">14:32:45 AST</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="A small, professional avatar photo of a corporate user, male, wearing formal business attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACLRyBzQbtEF1e4gBOinkjW3iYVunR27ty8AqMqASrfHwxKygFdhfF5-HXOz01Fp7J0hGKJ_R7mhzMWTDYJpaObrg48TdKgu4l3vs3NjN3-YZylS7az5pHDyM3_nx2-ZrbYMOWJ9y8iNf2bjhiyxgEaS7dVDZvqWQa-Xl52W11XvnYAlHOme0cafMs9HVuPt8YUWEbIShbi3CgJoh6cLzSnsXNlNYST3J7q6XZzH64dNvV02JvAw7U9A"/>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">أحمد عبدالله</span>
+<span class="text-on-surface-variant text-label-sm">مدير النظام (Admin)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-label-md bg-surface-variant text-on-surface-variant border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]">manage_accounts</span>
+                                        تعديل صلاحيات
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-on-surface">الإدارة العامة</td>
+<td class="py-3 px-4 whitespace-nowrap font-mono text-sm text-primary">UserRole_Policy_v2</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-mono text-sm">192.168.1.105</span>
+<span class="text-on-surface-variant text-label-sm">Windows / Chrome</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-md bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        حرج
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-center">
+<button class="p-1.5 rounded-md text-primary hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer" onclick="openDrawer()">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">07 نوفمبر 2023</span>
+<span class="text-on-surface-variant text-label-sm">13:15:22 AST</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="A small, professional avatar photo of a corporate user, female, wearing professional attire including a hijab." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDomXv9rDK_JMtUejjXdElEBdlClTjlp-x-Ba87q-uhYgLf9hN-KIFd0OVqwHnDD6Y2XlZlLvnocUtwpLrrFN_Y6QjVzPgoCSwf-23yiC3httS4QnVyJMAVWx83BBai7uEQ3dCJZyVg4STmGfQz4_9m-AonK0Ynq0YPf4kHJd3oIee6NXuU2AbUFyUvabkDpKgiSomPDik4Ffvo8PWEMk6qQPZUAa4X0t50LpaDfW0d6e3atkP-7zB8xQ"/>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">سارة محمد</span>
+<span class="text-on-surface-variant text-label-sm">محلل بيانات (Analyst)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-label-md bg-surface-variant text-on-surface-variant border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]">cloud_upload</span>
+                                        استيراد بيانات
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-on-surface">فرع جدة</td>
+<td class="py-3 px-4 whitespace-nowrap font-mono text-sm text-primary">Financial_Q3.csv</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-mono text-sm">10.0.4.52</span>
+<span class="text-on-surface-variant text-label-sm">macOS / Safari</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-md bg-surface-container-highest text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        معلومة
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer" onclick="openDrawer()">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">07 نوفمبر 2023</span>
+<span class="text-on-surface-variant text-label-sm">11:04:10 AST</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-bold text-sm border border-outline-variant/30">
+                                            SK
+                                        </div>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">System Kernel</span>
+<span class="text-on-surface-variant text-label-sm">Automated Task</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-label-md bg-surface-variant text-on-surface-variant border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]">auto_delete</span>
+                                        أرشفة تلقائية
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-on-surface">الخوادم المركزية</td>
+<td class="py-3 px-4 whitespace-nowrap font-mono text-sm text-primary">Old_Logs_2022</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-mono text-sm">localhost</span>
+<span class="text-on-surface-variant text-label-sm">Linux / Cron</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-md bg-[#ff9939]/20 text-on-tertiary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ff9939]"></span>
+                                        تحذير
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer" onclick="openDrawer()">
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">07 نوفمبر 2023</span>
+<span class="text-on-surface-variant text-label-sm">09:45:00 AST</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-sm border border-outline-variant/30">
+                                            UK
+                                        </div>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">مستخدم مجهول</span>
+<span class="text-error text-label-sm">Unauthenticated</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-label-md bg-surface-variant text-on-surface-variant border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]">login</span>
+                                        محاولة دخول فاشلة
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-on-surface">بوابة الموظفين</td>
+<td class="py-3 px-4 whitespace-nowrap font-mono text-sm text-primary">Auth_Service</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-mono text-sm text-error">185.12.x.x</span>
+<span class="text-on-surface-variant text-label-sm">Unknown / Python</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-md bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        حرج
+                                    </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-4 py-3 border-t border-outline-variant/30 bg-surface flex items-center justify-between">
+<span class="text-on-surface-variant text-label-md">عرض 1 إلى 4 من أصل 14,280 سجل</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container border border-transparent disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-primary text-on-primary font-medium text-sm">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container border border-outline-variant/30 font-medium text-sm">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container border border-outline-variant/30 font-medium text-sm">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant text-sm">...</span>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container border border-transparent">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Side Drawer (Event Details - Active State) -->
+<!-- Overlay -->
+<div class="absolute inset-0 bg-on-background/20 backdrop-blur-sm z-40 transition-opacity duration-300" id="drawer-overlay" onclick="closeDrawer()"></div>
+<!-- Drawer Panel -->
+<div class="absolute left-0 top-0 h-full w-[450px] bg-surface border-r border-outline-variant/30 shadow-[-8px_0_24px_rgba(0,0,0,0.1)] z-50 flex flex-col transform transition-transform duration-300 ease-in-out" id="detail-drawer">
+<!-- Drawer Header -->
+<div class="px-6 py-5 border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-lowest sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">تفاصيل الحدث</h3>
+<p class="text-label-md text-on-surface-variant font-mono mt-0.5">ID: EVT-8942-XQ-2023</p>
+</div>
+</div>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95" onclick="closeDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 hide-scrollbar">
+<!-- Quick Summary Badges -->
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full font-label-md border border-error/20 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                        خطورة حرجة
+                    </span>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-full font-label-md border border-outline-variant/30">
+                        تعديل صلاحيات
+                    </span>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-full font-label-md border border-outline-variant/30 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                        07 نوفمبر 2023, 14:32:45
+                    </span>
+</div>
+<!-- Actor Info (Bento Card) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 shadow-sm">
+<h4 class="text-label-md font-bold text-on-surface-variant mb-3 border-b border-outline-variant/20 pb-2">معلومات المنفذ</h4>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A small, professional avatar photo of a corporate user, male, wearing formal business attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO2Rwxs2eURUmP77CXqQfNuNOL2KIQJdzILFm9ioNzMn9AhxiG32CLk1vrZ9wZhHlO7PZml8bNSB0XwDyqAUlOGq8NXkbS8y5wkcRVWbVNtdZSVdj_WWTYSdHfZqjOVTVtwjaTlfIi3hlrT51uvFoHUh-88nsyeKgHU5gXN0uRGILmfBko1l18xjtJZyhHMtB3dNgq4OC1aMMS40RW1bKMzfis7AKiQLEFrFV_WQipMhiDTaLNMY2kcQ"/>
+<div>
+<p class="font-medium text-on-surface text-body-lg">أحمد عبدالله</p>
+<p class="text-label-md text-on-surface-variant">a.abdullah@daralsafaa.com</p>
+</div>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">المنصب / الدور</p>
+<p class="font-medium text-on-surface">مدير النظام (Admin)</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">القطاع</p>
+<p class="font-medium text-on-surface">الإدارة العامة - تقنية المعلومات</p>
+</div>
+</div>
+</div>
+<!-- Network & Metadata (Bento Card) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-4 shadow-sm">
+<h4 class="text-label-md font-bold text-on-surface-variant mb-3 border-b border-outline-variant/20 pb-2">البيانات الفنية والشبكية</h4>
+<ul class="space-y-3">
+<li class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">wifi</span> عنوان IP</span>
+<span class="font-mono text-sm text-on-surface bg-surface px-2 py-0.5 rounded border border-outline-variant/20">192.168.1.105</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">location_on</span> الموقع الجغرافي</span>
+<span class="text-sm text-on-surface">الرياض، السعودية (Internal)</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">devices</span> الجهاز والمتصفح</span>
+<span class="text-sm text-on-surface">Windows 11 / Chrome 119</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">fingerprint</span> التوقيع الأمني</span>
+<span class="font-mono text-xs text-on-surface-variant truncate w-32" title="SHA-256: 8f4e3c2b1a...">8f4e3c2b1a...</span>
+</li>
+</ul>
+</div>
+<!-- Data Diff Section (Before / After) -->
+<div>
+<h4 class="text-label-md font-bold text-on-surface-variant mb-2">تفاصيل التغيير (Data Diff)</h4>
+<p class="text-label-sm text-on-surface-variant mb-3">المورد: <span class="font-mono text-primary bg-primary-container/10 px-1 rounded">UserRole_Policy_v2</span></p>
+<div class="border border-outline-variant/40 rounded-xl overflow-hidden font-mono text-sm bg-surface-container-lowest">
+<!-- Before (Removed) -->
+<div class="p-3 diff-removed border-b border-outline-variant/20">
+<div class="text-xs font-bold mb-1 uppercase tracking-wider opacity-70">القيمة السابقة (Before)</div>
+<code>
+                                {<br/>
+                                  "role": "Financial_Analyst",<br/>
+                                  "permissions": ["read_reports", "export_csv"]<br/>
+                                }
+                            </code>
+</div>
+<!-- After (Added) -->
+<div class="p-3 diff-added">
+<div class="text-xs font-bold mb-1 uppercase tracking-wider opacity-70">القيمة الجديدة (After)</div>
+<code>
+                                {<br/>
+                                  "role": "Financial_Analyst",<br/>
+                                  "permissions": ["read_reports", "export_csv", <strong>"approve_transfers"</strong>]<br/>
+                                }
+                            </code>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer / Actions -->
+<div class="px-6 py-4 border-t border-outline-variant/30 bg-surface-container-low flex gap-3">
+<button class="flex-1 bg-surface border border-outline-variant text-on-surface py-2.5 rounded-lg font-label-md hover:bg-surface-container transition-colors shadow-sm text-center">
+                    طباعة السجل
+                </button>
+<button class="flex-1 bg-error text-on-error py-2.5 rounded-lg font-label-md hover:bg-[#93000A] transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">flag</span>
+                    تحديد للتحقيق
+                </button>
+</div>
+</div>
+</div>
+<!-- Minimal script for drawer toggle -->
+<script>
+        function openDrawer() {
+            document.getElementById('detail-drawer').classList.remove('-translate-x-full');
+            document.getElementById('drawer-overlay').classList.remove('hidden', 'opacity-0');
+            document.getElementById('drawer-overlay').classList.add('opacity-100');
+        }
+
+        function closeDrawer() {
+            document.getElementById('detail-drawer').classList.add('-translate-x-full');
+            document.getElementById('drawer-overlay').classList.add('opacity-0');
+            setTimeout(() => {
+                document.getElementById('drawer-overlay').classList.add('hidden');
+            }, 300);
+        }
+        
+        // Ensure drawer is open on load for demonstration based on prompt
+        document.addEventListener('DOMContentLoaded', (event) => {
+             // Drawer starts visible in this mock based on "Active state" requirement
+        });
+    </script>
+</body></html>
